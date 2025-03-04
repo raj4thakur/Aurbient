@@ -25,7 +25,7 @@ SECRET_KEY = '6q(^e__s$zhqop3+gfrklhk7l4!p1l28-x4skw+--e&&-kyw5q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aurbient.onrender.com']
 
 
 # Application definition
