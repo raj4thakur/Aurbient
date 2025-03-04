@@ -167,20 +167,32 @@
   <div class="testimonials" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; padding: 20px;">
       <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
           <p style="font-size: 1.2em; color: #555;">"Aurbient transformed our business operations with cutting-edge AI solutions. Highly recommended!"</p>
-          <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Client A</cite>
+          <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Amity Foundation</cite>
       </blockquote>
       <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
           <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
-          <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Client B</cite>
+          <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Koyata</cite>
       </blockquote>
+      <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
+        <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
+        <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Kumkum&Fomices</cite>
+    </blockquote>
+    <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
+      <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
+      <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Tejusty Merte</cite>
+    </blockquote>
+    <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
+      <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
+      <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Owkins</cite>
+    </blockquote>
   </div>
 
   <h2 style="text-align: center; font-size: 2.5em; font-weight: bold; color: #333; margin-top: 50px;">Our Clients</h2>
   <ul class="clients-list" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
-      <li><img src="{% static 'images/client1.jpg' %}" alt="Client 1" style="max-width: 120px; height: auto;"></li>
-      <li><img src="client2.png" alt="Client 2" style="max-width: 120px; height: auto;"></li>
-      <li><img src="client3.png" alt="Client 3" style="max-width: 120px; height: auto;"></li>
-      <li><img src="client2.png" alt="Client 4" style="max-width: 120px; height: auto;"></li>
+      <li><img src="{% static 'images/client2.png' %}" alt="Client 1" style="max-width: 120px; height: auto;"></li>
+      <li><img src="{% static 'images/client3.png' %}" alt="Client 2" style="max-width: 120px; height: auto;"></li>
+      <li><img src="{% static 'images/client4.png' %}" alt="Client 3" style="max-width: 120px; height: auto;"></li>
+      <li><img src="{% static 'images/client3.png' %}" alt="Client 4" style="max-width: 120px; height: auto;"></li>
   </ul>
 </section>
 
@@ -233,17 +245,17 @@
     <p>Our experts combine innovation, experience, and passion to help you achieve your goals.</p>
     <div class="team-grid">
       <div class="team-member">
-        <img src="client1.jpg" alt="Team Member 1">
+        <img src="{% static 'images/client1.jpg' %}" alt="Team Member 1">
         <h3>Raj Thakur</h3>
         <p>CEO & AI Strategist</p>
       </div>
       <div class="team-member">
-        <img src="client1.jpg" alt="Team Member 2">
+        <img src="{% static 'images/client1.jpg' %}" alt="Team Member 2">
         <h3>Jessica Williams</h3>
         <p>Data Scientist</p>
       </div>
       <div class="team-member">
-        <img src="client1.jpg" alt="Team Member 3">
+        <img src="{% static 'images/client1.jpg' %}" alt="Team Member 3">
         <h3>Michael Tan</h3>
         <p>Cloud Architect</p>
       </div>
@@ -274,15 +286,16 @@
 
   <!-- Dynamic Industry "Cards" with Hover Effects -->
   <div class="industry-cards">
-      <div class="industry-card" style="background-image: url('healthcare.jpeg');">
+    <div class="industry-card" style="background-image: url('{% static "images/healthcare.jpeg" %}');">
+      <!-- Your content here -->
           <h3>Healthcare</h3>
           <p class="industry-description">Transforming patient care with AI-driven diagnostics and analytics.</p>
       </div>
-      <div class="industry-card" style="background-image: url('finance.jpeg');">
+      <div class="industry-card" style="background-image: url('{% static "images/finance.jpeg"%}');">
           <h3>Finance</h3>
           <p class="industry-description">Enhancing fraud detection and customer insights with machine learning.</p>
       </div>
-      <div class="industry-card" style="background-image: url('retial.jpeg');">
+      <div class="industry-card" style="background-image: url('{% static "images/retial.jpeg"%}');">
           <h3>Retail</h3>
           <p class="industry-description">Driving personalized shopping experiences with AI-powered solutions.</p>
       </div>
