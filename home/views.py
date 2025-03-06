@@ -18,4 +18,4 @@ def service_request_view(request):
     else:
         form = ServiceRequestForm()
 
-    return render(request, 'service_request.html', {'form': form})
+    return render(request, 'home/service_request.html', {'form': form})
