@@ -19,7 +19,7 @@
             <li><a href="#hero2">Services</a></li>
             <li><a href="#hero3">Blog</a></li>
             <li><a href="#hero4">Clients</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="{% url 'home:request_service' %}">Contact</a></li>
           </ul>
           <div class="search-icon">
             <i class="fas fa-search"></i>
@@ -353,7 +353,7 @@
         <a href="https://facebook.com" target="_blank">Facebook</a>
     </div>
   </footer>
-  <a href="service-request" class="cta-float-button">Contact Us</a>
+  <a href="{% url 'home:service_request' %}" class="cta-float-button">Contact Us</a>
 
   <script>
     const navLinks = document.querySelectorAll('nav a');

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 def home(request):
     return render(request,'home/home.html')
 
@@ -15,7 +14,7 @@ def service_request_view(request):
         form = ServiceRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('thank_you')  # Redirect to thank-you page
+            return redirect('home:thankyou')  # Redirect to thank-you page
     else:
         form = ServiceRequestForm()
 
