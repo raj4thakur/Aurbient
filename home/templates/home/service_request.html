@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Service</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 15px; padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Request a Service</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="name">Full Name:</label>
+        {{ form.name }}
+        
+        <label for="email">Email:</label>
+        {{ form.email }}
+
+        <label for="phone">Phone Number:</label>
+        {{ form.phone }}
+
+        <label for="company">Company Name:</label>
+        {{ form.company }}
+
+        <label for="service_type">Service Type:</label>
+        {{ form.service_type }}
+
+        <label for="project_scope">Project Scope:</label>
+        {{ form.project_scope }}
+
+        <label for="employees_count">Number of Employees:</label>
+        {{ form.employees_count }}
+
+        <label for="location">Location:</label>
+        {{ form.location }}
+
+        <label for="additional_info">Additional Information:</label>
+        {{ form.additional_info }}
+
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>
