@@ -4,7 +4,7 @@ def home(request):
     return render(request,'home/home.html')
 
 def thank_you_view(request):
-    return render(request, 'thank_you.html')
+    return render(request, 'home/thank_you.html')
 
 from django.shortcuts import render, redirect
 from .forms import ServiceRequestForm
@@ -14,7 +14,7 @@ def service_request_view(request):
         form = ServiceRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home:thankyou')  # Redirect to thank-you page
+            return redirect('home:thank_you')  # Redirect to thank-you page
     else:
         form = ServiceRequestForm()
 

@@ -76,10 +76,27 @@ WSGI_APPLICATION = 'Aurbient.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+import urllib.parse
+username = "22adv3ari0016"
+password = urllib.parse.quote_plus("Neelesh@3003")
+
+# Add TLS options
+MONGO_URI = f"mongodb+srv://{username}:{password}@feastfitdb.orybr.mongodb.net/?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true"
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'AurbientFit',  # Replace with your MongoDB database name
+        'CLIENT': {
+            'host': MONGO_URI,
+            'authSource': 'admin'  # If authentication is required
+        }
     }
 }
 
@@ -128,6 +145,6 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
