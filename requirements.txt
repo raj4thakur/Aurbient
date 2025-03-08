@@ -1,7 +1,7 @@
 Django
 djongo==1.3.6
 gunicorn
-pymongo
 whitenoise
 pymongo[srv]
 pytz
+dnspython
