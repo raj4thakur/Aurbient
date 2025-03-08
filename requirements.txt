@@ -4,3 +4,4 @@ gunicorn
 pymongo
 whitenoise
 pymongo[srv]
+pytz
