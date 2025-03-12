@@ -6,19 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aurbient Consulting</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+  <link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-          <h1>Aurbient</h1>
+          <h1>AURBIENT</h1>
         </div>
         <nav>
           <ul>
-            <li><a href="#hero1">Home</a></li>
             <li><a href="#hero2">Services</a></li>
+            <li><a href='#technologes'> Technology</a></li>
             <li><a href="#hero3">Blog</a></li>
             <li><a href="#hero4">Clients</a></li>
+            <li><a href="#hero1">Career</a></li>
             <li><a href="{% url 'home:request_service' %}">Contact</a></li>
           </ul>
           <div class="search-icon">
@@ -29,7 +31,7 @@
       </header>
     
       <!-- Hero 1: Brand and Tagline -->
-      <section id="hero1" class="hero" style="background: linear-gradient(135deg, #6a82fb, #fc5c7d); animation: backgroundAnimation 5s ease infinite;">
+      <section id="hero1" class="hero">
         <div class="hero-content animate__animated animate__fadeIn">
           <h1>Welcome to Aurbient Consulting</h1>
           <p>Empowering your business with AI, technology, and innovation.</p>
@@ -80,7 +82,7 @@
   <!-- Hero 3: Creative Content, Blogs, Newsletters -->
   <section id="hero3" class="hero" style="padding: 50px 20px;">
     <h2>Creative Insights</h2>
-    <p>Stay informed with the latest trends and innovations in AI, technology, and business transformation.</p>
+    <p id="content-grid-head">Stay informed with the latest trends and innovations in AI, technology, and business transformation.</p>
     
     <!-- Content Grid with Mixed Content -->
     <div class="content-grid">
@@ -239,28 +241,6 @@
 </section>
 
 
-
-  <section id="team" class="hero">
-    <h2>Meet Our Team</h2>
-    <p>Our experts combine innovation, experience, and passion to help you achieve your goals.</p>
-    <div class="team-grid">
-      <div class="team-member">
-        <img src="{% static 'images/client1.jpg' %}" alt="Team Member 1">
-        <h3>Raj Thakur</h3>
-        <p>CEO & AI Strategist</p>
-      </div>
-      <div class="team-member">
-        <img src="{% static 'images/client1.jpg' %}" alt="Team Member 2">
-        <h3>Jessica Williams</h3>
-        <p>Data Scientist</p>
-      </div>
-      <div class="team-member">
-        <img src="{% static 'images/client1.jpg' %}" alt="Team Member 3">
-        <h3>Michael Tan</h3>
-        <p>Cloud Architect</p>
-      </div>
-    </div>
-  </section>
   <section id="case-studies" class="hero">
     <h2>Our Success Stories</h2>
     <p>See how we’ve helped businesses achieve exceptional results with AI and technology solutions.</p>
@@ -304,46 +284,10 @@
   <!-- A short note that we serve more industries -->
   <p class="more-industries">We serve a wide range of industries beyond these. Get in touch to discover how we can help your business!</p>
 </section>
-
-
-<section id="faq" class="hero">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-container">
-    <div class="faq-item">
-      <h3 class="faq-question">What services does Aurbient Consulting offer?</h3>
-      <p class="faq-answer">
-        We provide AI strategy consulting, automation, custom solutions, and more to help businesses succeed.
-      </p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-question">How long does it take to implement your solutions?</h3>
-      <p class="faq-answer">
-        Implementation timelines vary depending on the complexity of the project. Most solutions take 2-6 months.
-      </p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-question">What industries do you specialize in?</h3>
-      <p class="faq-answer">
-        We serve industries like healthcare, finance, retail, and manufacturing, among others.
-      </p>
-    </div>
-  </div>
-</section>
-
-  <section id="careers" class="hero">
-    <h2>Join Our Team</h2>
-    <p>Looking to make a difference in the AI industry? We’re hiring!</p>
-    <a href="#contact" class="cta-button">Explore Careers</a>
-  </section>
   <section id="contact" class="hero" style="padding: 50px 20px;">
     <h2>Ready to Transform Your Business?</h2>
     <p>Contact us today to schedule a consultation with our expert team.</p>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <a href="{% url 'home:request_service' %}"><button type="submit">request Service</button></a>
   </section>
   <footer>
     <p>&copy; 2025 Aurbient Consulting. All rights reserved.</p>
@@ -354,7 +298,6 @@
     </div>
   </footer>
   <a href="{% url 'home:request_service' %}" class="cta-float-button">Contact Us</a>
-
   <script>
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
@@ -369,6 +312,5 @@
     });
   </script>
   <script src="{% static 'js/scroll.js' %}"></script>
-  
 </body>
 </html>

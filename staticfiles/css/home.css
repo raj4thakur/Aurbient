@@ -99,7 +99,7 @@ transform: scale(1.1);
 background-color: #333;
 }
 .hero#hero1 {
-background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+background: linear-gradient(135deg, #6a82fb);
 animation: backgroundAnimation 5s ease infinite;
 }
 .hero#hero1 h1 {
