@@ -35,15 +35,16 @@ z-index: 1000;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 header .logo {
-    font-size: 0.9em; /* Enhance the size for prominence */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Alternative font for a modern and tech-oriented feel */
-    color: #e0e0e0; /* Soft gray to contrast with bright backgrounds */
-    letter-spacing: 3px; /* Increased spacing between letters */
+    letter-spacing: 1px; /* Increased spacing between letters */
     text-transform: uppercase; /* Ensure consistent uppercase style */
-    padding-left: 3%;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for a 3D effect */
+    padding-left: 4%;
+    font-size: 1.6em;
+    font-weight:bolder;
+    color: white;
 }
-
+header nav{
+    margin-right:10%;
+}
 header nav ul {
 display: flex;
 gap: 30px;
@@ -73,41 +74,96 @@ margin-bottom: 50px;
 position: relative;
 overflow: hidden;
 }
-.hero h1 {
-font-size: 4em;
-font-weight: bold;
-color: white;
-margin-bottom: 20px;
-text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-}
-.hero p {
-font-size: 1.4em;
-color: white;
-margin-bottom: 20px;
-}
-.cta-button {
-padding: 15px 30px;
-background-color: #02bd1b;
-color: white;
-font-weight: bold;
-border-radius: 50px;
-border: none;
-font-size: 1.2em;
-transition: transform 0.3s, background-color 0.3s;
-}
-.cta-button:hover {
-transform: scale(1.1);
-background-color: #0b3789;
-}
+/* HERO 1 Specific Styling */
 .hero#hero1 {
-background-color:#08145c;
+    background-color: #08145c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
 }
-.hero#hero1 h1 {
-font-size: 4.8em;
+
+.hero1-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
 }
-.hero#hero1 p {
-font-size: 1.4em;
+
+.hero1-text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
 }
+
+.hero1-text h1 {
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero1-text p {
+    font-size: 1.4em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #02bd1b;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.2em;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background-color: #0b3789;
+}
+
+/* Right Side: Image */
+.hero1-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero1-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero1-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero1-text, .hero1-image {
+        width: 100%;
+    }
+
+    .hero1-text h1 {
+        font-size: 3em;
+    }
+
+    .hero1-image img {
+        max-width: 300px;
+    }
+}
+
+
 /* Mission and Vision */
 #mission-vision {
 padding: 50px 20px;

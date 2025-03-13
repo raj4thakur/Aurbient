@@ -14,16 +14,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-          <h1 href="{% url 'home:home'%}">AURBIENT</h1>
-        </div>
+      <a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
         <nav>
           <ul>
             <li><a href="#hero2">Services</a></li>
             <li><a href='#technologes'> Technology</a></li>
-            <!---add url for the blogs-->
-            <li><a href="/blogs">Blog</a></li>
-            <li><a href="#hero4">Clients</a></li>
+            {% comment %} <li><a href="/blogs">Blog</a></li> {% endcomment %}
             <li><a href="#hero1">Career</a></li>
             <li><a href="">Contact</a></li>
             <li><a href="">About</a></li>
@@ -32,20 +28,25 @@
       </header>
       <!-- Hero 1: Brand and Tagline -->
       <section id="hero1" class="hero">
-        <div class="hero-content animate__animated animate__fadeIn">
-          <h1>Welcome to Aurbient Technologies</h1>
-          <p>Empowering your business with AI, technology, and innovation.</p>
-          <p>Discover our expertise in transforming your vision into success.</p>
-          <a href="{% url 'home:request_service' %}" class="cta-button">Get Started</a>
+        <div class="hero1-container">
+            <!-- Left Side: Text Content -->
+            <div class="hero1-text">
+                <h1>Welcome to Aurbient Technologies & Consulting</h1>
+                <p>We harness the power of AI, automation, and emerging technologies to drive business success.  
+                    From strategy to execution, we turn your vision into reality.</p>
+                <a href="{% url 'home:request_service' %}" class="cta-button">Get Started</a>
+            </div>
+            <!-- Right Side: Image -->
+            <div class="hero1-image">
+                <img src="{% static 'images/imageai.jpeg' %}" alt="AI & Business Innovation">
+            </div>
         </div>
-      </section>
-    
-      <!-- Hero 2: Services -->
-      <section id="hero2" class="hero">
-        <h2>Our Services</h2>
-        <p>Empowering businesses with cutting-edge AI and technology solutions designed for growth, innovation, and efficiency.</p>
-        
-        <div class="services-horizontal-scroll" id="scrollable-content">
+    </section>
+    <section id="hero2" class="hero">
+      <h2>Our Services</h2>
+      <p>Empowering businesses with cutting-edge AI and technology solutions designed for growth, innovation, and efficiency.</p>
+      
+      <div class="services-horizontal-scroll" id="scrollable-content">
             <button class="scroll-btn left-btn" id="scroll-left">&#9664;</button>
     
             <!-- Service Cards -->
@@ -53,7 +54,7 @@
                 <h3>AI Strategy Consulting</h3>
                 <p>Develop a winning AI strategy to optimize operations, increase efficiency, and unlock new revenue streams.</p>
             </div>
-            <div class="service-card" data-image="{% static 'images/businessautomation.jpeg' %}">
+            <div class="service-card" data-image="{% static 'images/h1.jpg' %}">
                 <h3>Business Process Automation</h3>
                 <p>Transform repetitive tasks into seamless automated workflows, saving time and reducing costs.</p>
             </div>
@@ -65,124 +66,102 @@
                 <h3>End-to-End Product Development</h3>
                 <p>Bring your vision to life with comprehensive product development services, from concept to launch.</p>
             </div>
-            <div class="service-card" data-image="{% static 'images/service-ai-strategy.jpg' %}">
+            <div class="service-card" data-image="{% static 'images/custom.jpeg' %}">
                 <h3>Custom AI Solutions</h3>
                 <p>Empower your business with tailored AI systems designed to solve your unique challenges and drive growth.</p>
             </div>
-            <div class="service-card" data-image="{% static 'images/service-ai-strategy.jpg' %}">
-                <h3>Training & Workshops</h3>
+            <!--
+            <div class="service-card" data-image="{% static 'images/training.jpeg' %}">
+                <h3>Training&Workshops</h3>
                 <p>Equip your team with the skills needed to harness AI and emerging technologies through expert-led sessions.</p>
             </div>
-            <div class="service-card" data-image="{% static 'images/service-ai-strategy.jpg' %}">
+            <div class="service-card" data-image="{% static 'images/itauditing.jpeg' %}">
                 <h3>IT Auditing</h3>
                 <p>Ensure compliance, security, and efficiency with a thorough evaluation of your IT systems and processes.</p>
-            </div>
+            </div>-->
     
             <button class="scroll-btn right-btn" id="scroll-right">&#9654;</button>
         </div>
     </section>
-    
-  <!-- Hero 3: Creative Content, Blogs, Newsletters -->
-  
+    <section id="split-section" style="display: flex; justify-content: space-between; gap: 30px; padding: 60px 20px;">
+        <div class="left-content" style="width: 48%; padding: 20px; background-color: #f1f1f1; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <h2>Embrace the Future of Technology</h2>
+          <p>Discover how our AI-driven solutions can help you streamline operations, enhance decision-making, and fuel business growth. Stay ahead of the competition by adopting the latest technological innovations designed to solve today’s challenges and tomorrow's opportunities.</p>
+          <button class="cta-button" style="padding: 12px 30px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">Learn More</button>
+        </div>
+        <div class="right-content" style="width: 48%; padding: 20px; background-color: #007BFF; color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+          <h2>Start Your Transformation Journey</h2>
+          <p>Ready to take the next step? Let us guide you on a transformative journey to a smarter, more efficient business. Our team of experts will work closely with you to understand your unique needs and tailor a solution that aligns with your vision.</p>
+          <a href="{% url 'home:request_service' %}" class="cta-button" style="padding: 12px 30px; background-color: #fff; color: #007BFF; border: none; border-radius: 4px; cursor: pointer;">Get Started</a>
+        </div>
+    </section>
 
-<section id="split-section" style="display: flex; justify-content: space-between; gap: 30px; padding: 60px 20px;">
-    <div class="left-content" style="width: 48%; padding: 20px; background-color: #f1f1f1; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-      <h2>Embrace the Future of Technology</h2>
-      <p>Discover how our AI-driven solutions can help you streamline operations, enhance decision-making, and fuel business growth. Stay ahead of the competition by adopting the latest technological innovations designed to solve today’s challenges and tomorrow's opportunities.</p>
-      <button class="cta-button" style="padding: 12px 30px; background-color: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer;">Learn More</button>
+  <section id="focus-areas">
+    <h2>Our Focus Areas</h2>
+    <p>We empower businesses across industries with AI, automation, and cutting-edge technologies to drive innovation and efficiency.</p>
+
+    <div class="focus-grid">
+        <div class="focus-card">
+            <h3>Retail & E-Commerce</h3>
+            <p>Leveraging AI for personalized recommendations, demand forecasting, and supply chain optimization to enhance customer engagement and revenue.</p>
+        </div>
+
+        <div class="focus-card">
+            <h3>Manufacturing & Industrial Automation</h3>
+            <p>Implementing AI-driven predictive maintenance, process automation, and robotics to improve efficiency and reduce operational costs.</p>
+        </div>
+
+        <div class="focus-card">
+            <h3>Healthcare & Life Sciences</h3>
+            <p>Developing AI-powered diagnostics, predictive analytics, and patient care solutions to enhance healthcare outcomes and efficiency.</p>
+        </div>
+
+        <div class="focus-card">
+            <h3>Finance & Banking</h3>
+            <p>Enabling financial institutions with AI-driven fraud detection, risk assessment, and automated compliance monitoring for secure operations.</p>
+        </div>
+
+        <div class="focus-card">
+            <h3>Smart Cities & IoT Solutions</h3>
+            <p>Creating IoT-powered smart infrastructure for energy management, security, and automation to build sustainable and intelligent urban environments.</p>
+        </div>
+
+        <div class="focus-card">
+            <h3>Enterprise AI & Digital Transformation</h3>
+            <p>Integrating AI-driven automation, cloud solutions, and cybersecurity to enhance productivity and resilience in the digital era.</p>
+        </div>
     </div>
-    <div class="right-content" style="width: 48%; padding: 20px; background-color: #007BFF; color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-      <h2>Start Your Transformation Journey</h2>
-      <p>Ready to take the next step? Let us guide you on a transformative journey to a smarter, more efficient business. Our team of experts will work closely with you to understand your unique needs and tailor a solution that aligns with your vision.</p>
-      <button class="cta-button" style="padding: 12px 30px; background-color: #fff; color: #007BFF; border: none; border-radius: 4px; cursor: pointer;">Get Started</button>
+  </section>
+
+  <section id="hero4" class="hero">
+    <h2>Why Choose Us?</h2>
+    <div class="reasons">
+        <div class="reason-card">
+            <h3>Expertise in AI & Automation</h3>
+            <p>With years of experience in AI, machine learning, and automation, we develop solutions that enhance efficiency and drive innovation.</p>
+        </div>
+        <div class="reason-card">
+            <h3>Custom-Tailored Solutions</h3>
+            <p>We don’t believe in one-size-fits-all. Our team crafts AI-driven strategies specific to your business goals and industry needs.</p>
+        </div>
+        <div class="reason-card">
+            <h3>Seamless Integration</h3>
+            <p>Our solutions integrate smoothly into your existing systems, ensuring a hassle-free transition and maximum ROI.</p>
+        </div>
+        <div class="reason-card">
+            <h3>Innovation-First Approach</h3>
+            <p>We stay ahead of emerging technologies, ensuring that your business benefits from cutting-edge advancements in AI and digital transformation.</p>
+        </div>
+        <div class="reason-card">
+            <h3>Data-Driven Decision Making</h3>
+            <p>We leverage advanced analytics to help you make informed decisions, optimize processes, and improve customer experiences.</p>
+        </div>
+        <div class="reason-card">
+            <h3>End-to-End Support</h3>
+            <p>From strategy to implementation and ongoing optimization, we are with you at every step of your AI and automation journey.</p>
+        </div>
     </div>
-</section>
-
-<section id="focus-areas">
-  <h2>Our Focus Areas</h2>
-  <p>We empower businesses across industries with AI, automation, and cutting-edge technologies to drive innovation and efficiency.</p>
-
-  <div class="focus-grid">
-      <div class="focus-card">
-          <h3>Retail & E-Commerce</h3>
-          <p>Leveraging AI for personalized recommendations, demand forecasting, and supply chain optimization to enhance customer engagement and revenue.</p>
-      </div>
-
-      <div class="focus-card">
-          <h3>Manufacturing & Industrial Automation</h3>
-          <p>Implementing AI-driven predictive maintenance, process automation, and robotics to improve efficiency and reduce operational costs.</p>
-      </div>
-
-      <div class="focus-card">
-          <h3>Healthcare & Life Sciences</h3>
-          <p>Developing AI-powered diagnostics, predictive analytics, and patient care solutions to enhance healthcare outcomes and efficiency.</p>
-      </div>
-
-      <div class="focus-card">
-          <h3>Finance & Banking</h3>
-          <p>Enabling financial institutions with AI-driven fraud detection, risk assessment, and automated compliance monitoring for secure operations.</p>
-      </div>
-
-      <div class="focus-card">
-          <h3>Smart Cities & IoT Solutions</h3>
-          <p>Creating IoT-powered smart infrastructure for energy management, security, and automation to build sustainable and intelligent urban environments.</p>
-      </div>
-
-      <div class="focus-card">
-          <h3>Enterprise AI & Digital Transformation</h3>
-          <p>Integrating AI-driven automation, cloud solutions, and cybersecurity to enhance productivity and resilience in the digital era.</p>
-      </div>
-  </div>
-</section>
-
-<section id="hero4" class="hero">
-  <h2>Why Choose Us?</h2>
-  <div class="reasons">
-      <div class="reason-card">
-          <h3>Expertise in AI & Automation</h3>
-          <p>With years of experience in AI, machine learning, and automation, we develop solutions that enhance efficiency and drive innovation.</p>
-      </div>
-      <div class="reason-card">
-          <h3>Custom-Tailored Solutions</h3>
-          <p>We don’t believe in one-size-fits-all. Our team crafts AI-driven strategies specific to your business goals and industry needs.</p>
-      </div>
-      <div class="reason-card">
-          <h3>Seamless Integration</h3>
-          <p>Our solutions integrate smoothly into your existing systems, ensuring a hassle-free transition and maximum ROI.</p>
-      </div>
-      <div class="reason-card">
-          <h3>Innovation-First Approach</h3>
-          <p>We stay ahead of emerging technologies, ensuring that your business benefits from cutting-edge advancements in AI and digital transformation.</p>
-      </div>
-      <div class="reason-card">
-          <h3>Data-Driven Decision Making</h3>
-          <p>We leverage advanced analytics to help you make informed decisions, optimize processes, and improve customer experiences.</p>
-      </div>
-      <div class="reason-card">
-          <h3>End-to-End Support</h3>
-          <p>From strategy to implementation and ongoing optimization, we are with you at every step of your AI and automation journey.</p>
-      </div>
-  </div>
-</section>
-
-  <section id="case-studies" class="hero">
-    <h2>Our Success Stories</h2>
-    <p>See how we’ve helped businesses achieve exceptional results with AI and technology solutions.</p>
-    <div class="case-study-grid">
-      <div class="case-study">
-        <h3>E-commerce Personalization</h3>
-        <p>Increased sales by 35% through AI-powered customer recommendations.</p>
-      </div>
-      <div class="case-study">
-        <h3>Manufacturing Automation</h3>
-        <p>Reduced production downtime by 40% with real-time process optimization.</p>
-      </div>
-      <div class="case-study">
-        <h3>Healthcare Analytics</h3>
-        <p>Improved patient outcomes using predictive analytics for chronic conditions.</p>
-      </div>
-    </div>
-</section>
+  </section>
 
 <section id="industry-expertise" class="hero">
   <h2>Industries We Serve</h2>
