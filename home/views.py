@@ -19,3 +19,7 @@ def service_request_view(request):
         form = ServiceRequestForm()
 
     return render(request, 'home/service_request.html', {'form': form})
+
+def blogsView(request):
+    print("request in process!")
+    return render(request, 'home/blogs.html')

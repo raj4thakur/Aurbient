@@ -6,148 +6,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aurbient Consulting</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+  <link rel="stylesheet" href="{% static 'css/services.css' %}">
+  <link rel="stylesheet" href="{% static 'css/ourfocus.css' %}">
+  <link rel="stylesheet" href="{% static 'css/whychoose.css' %}">
   <link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-          <h1>AURBIENT</h1>
+          <h1 href="{% url 'home:home'%}">AURBIENT</h1>
         </div>
         <nav>
           <ul>
             <li><a href="#hero2">Services</a></li>
             <li><a href='#technologes'> Technology</a></li>
-            <li><a href="#hero3">Blog</a></li>
+            <!---add url for the blogs-->
+            <li><a href="/blogs">Blog</a></li>
             <li><a href="#hero4">Clients</a></li>
             <li><a href="#hero1">Career</a></li>
-            <li><a href="{% url 'home:request_service' %}">Contact</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">About</a></li>
           </ul>
-          <div class="search-icon">
-            <i class="fas fa-search"></i>
-          </div>
         </nav>
-        
       </header>
-    
       <!-- Hero 1: Brand and Tagline -->
       <section id="hero1" class="hero">
         <div class="hero-content animate__animated animate__fadeIn">
-          <h1>Welcome to Aurbient Consulting</h1>
+          <h1>Welcome to Aurbient Technologies</h1>
           <p>Empowering your business with AI, technology, and innovation.</p>
           <p>Discover our expertise in transforming your vision into success.</p>
-          <a href="#contact" class="cta-button">Get Started</a>
+          <a href="{% url 'home:request_service' %}" class="cta-button">Get Started</a>
         </div>
       </section>
     
       <!-- Hero 2: Services -->
       <section id="hero2" class="hero">
         <h2>Our Services</h2>
-        <p>Empowering businesses with cutting-edge AI and technology solutions tailored for growth and innovation.</p>
-        <div class="services-horizontal-scroll" id="scrollable-content">
-          <button class="scroll-btn left-btn" id="scroll-left">&#9664;</button>
-          <!-- Service Cards -->
-          <div class="service-card">
-            <h3>AI Strategy Consulting</h3>
-            <p>Develop a winning AI strategy to optimize operations, increase efficiency, and unlock new revenue streams.</p>
-          </div>
-          <div class="service-card">
-            <h3>Business Process Automation</h3>
-            <p>Transform repetitive tasks into seamless automated workflows, saving time and reducing costs.</p>
-          </div>
-          <div class="service-card">
-            <h3>Technology Adoption Roadmaps</h3>
-            <p>Stay ahead of the curve with a clear, step-by-step plan for adopting transformative technologies.</p>
-          </div>
-          <div class="service-card">
-            <h3>End-to-End Product Development</h3>
-            <p>Bring your vision to life with comprehensive product development services, from concept to launch.</p>
-          </div>
-          <div class="service-card">
-            <h3>Custom AI Solutions</h3>
-            <p>Empower your business with tailored AI systems designed to solve your unique challenges and drive growth.</p>
-          </div>
-          <div class="service-card">
-            <h3>Training & Workshops</h3>
-            <p>Equip your team with the skills needed to harness AI and emerging technologies through expert-led sessions.</p>
-          </div>
-          <div class="service-card">
-            <h3>IT Auditing</h3>
-            <p>Ensure compliance, security, and efficiency with a thorough evaluation of your IT systems and processes.</p>
-          </div>
-          <button class="scroll-btn right-btn" id="scroll-right">&#9654;</button>
-        </div>
+        <p>Empowering businesses with cutting-edge AI and technology solutions designed for growth, innovation, and efficiency.</p>
         
-      </section>
-  <!-- Hero 3: Creative Content, Blogs, Newsletters -->
-  <section id="hero3" class="hero" style="padding: 50px 20px;">
-    <h2>Creative Insights</h2>
-    <p id="content-grid-head">Stay informed with the latest trends and innovations in AI, technology, and business transformation.</p>
+        <div class="services-horizontal-scroll" id="scrollable-content">
+            <button class="scroll-btn left-btn" id="scroll-left">&#9664;</button>
     
-    <!-- Content Grid with Mixed Content -->
-    <div class="content-grid">
-      <div class="content-card article">
-        <h4>Understanding AI: A Beginner's Guide</h4>
-        <p>Learn how AI is transforming industries and how your business can benefit from it. Explore practical use cases and get a deeper understanding of AI’s potential.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card blog">
-        <h4>The Rise of Cobots</h4>
-        <p>Discover how collaborative robots (cobots) are enhancing productivity in manufacturing, reducing costs, and increasing workplace safety.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card article">
-        <h4>Case Study: AI in Manufacturing</h4>
-        <p>In this case study, we highlight how a leading manufacturing company implemented AI solutions to optimize production processes and reduce waste.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card article">
-        <h4>The Future of Work: AI & Automation</h4>
-        <p>With AI and automation making rapid advancements, we explore how the workforce will change, including new job roles and the evolution of remote work.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card blog">
-        <h4>DeFi: A Revolution in Finance</h4>
-        <p>Explore how decentralized finance (DeFi) is reshaping the financial landscape, offering more accessibility, transparency, and security to users worldwide.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card article">
-        <h4>Case Study: Blockchain for Supply Chain</h4>
-        <p>This case study demonstrates how blockchain technology is transforming supply chains by enhancing transparency and reducing fraud.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card article">
-        <h4>How AI is Redefining Customer Experience</h4>
-        <p>From chatbots to predictive analytics, AI is revolutionizing customer service. Learn how businesses are using AI to improve the customer journey and build loyalty.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card blog">
-        <h4>5G and Its Impact on IoT</h4>
-        <p>With the rise of 5G, IoT devices are becoming faster and more interconnected. This article explores how 5G will transform the IoT ecosystem and unlock new business possibilities.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="content-card article">
-        <h4>Case Study: AI in Healthcare</h4>
-        <p>Learn how AI is revolutionizing healthcare, from personalized treatments to improving patient outcomes with predictive analytics.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-  
-    <!-- Subscribe Section -->
-    <section id="subscribe" class="subscribe-section">
-      <h2>Stay Updated with Our Latest Insights</h2>
-      <p>Subscribe to our newsletter for more updates on AI, technology, and business innovations delivered directly to your inbox!</p>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
+            <!-- Service Cards -->
+            <div class="service-card" data-image="{% static 'images/aistretegy.jpeg' %}">
+                <h3>AI Strategy Consulting</h3>
+                <p>Develop a winning AI strategy to optimize operations, increase efficiency, and unlock new revenue streams.</p>
+            </div>
+            <div class="service-card" data-image="{% static 'images/businessautomation.jpeg' %}">
+                <h3>Business Process Automation</h3>
+                <p>Transform repetitive tasks into seamless automated workflows, saving time and reducing costs.</p>
+            </div>
+            <div class="service-card" data-image="{% static 'images/technologyadoption.jpeg' %}">
+                <h3>Technology Adoption Roadmaps</h3>
+                <p>Stay ahead of the curve with a clear, step-by-step plan for adopting transformative technologies.</p>
+            </div>
+            <div class="service-card" data-image="{% static 'images/inovation.jpeg' %}">
+                <h3>End-to-End Product Development</h3>
+                <p>Bring your vision to life with comprehensive product development services, from concept to launch.</p>
+            </div>
+            <div class="service-card" data-image="{% static 'images/service-ai-strategy.jpg' %}">
+                <h3>Custom AI Solutions</h3>
+                <p>Empower your business with tailored AI systems designed to solve your unique challenges and drive growth.</p>
+            </div>
+            <div class="service-card" data-image="{% static 'images/service-ai-strategy.jpg' %}">
+                <h3>Training & Workshops</h3>
+                <p>Equip your team with the skills needed to harness AI and emerging technologies through expert-led sessions.</p>
+            </div>
+            <div class="service-card" data-image="{% static 'images/service-ai-strategy.jpg' %}">
+                <h3>IT Auditing</h3>
+                <p>Ensure compliance, security, and efficiency with a thorough evaluation of your IT systems and processes.</p>
+            </div>
+    
+            <button class="scroll-btn right-btn" id="scroll-right">&#9654;</button>
+        </div>
     </section>
-  </section>
-  <section id="mission-vision" class="hero" style="padding: 50px 20px;">
-    <h2>Our Mission & Vision</h2>
-    <p> Our mission is to empower businesses to unlock their full potential through cutting-edge AI and technology solutions. By providing innovative tools, data-driven insights, and industry expertise, we strive to create measurable success and meaningful transformation for our clients.</p>
-    <p>Our vision is to be at the forefront of AI-driven innovation, helping businesses around the globe embrace digital transformation. We aim to foster a future where technology is a trusted ally for businesses, unlocking new growth opportunities, improving efficiency, and revolutionizing industries.</p>
-</section>
+    
+  <!-- Hero 3: Creative Content, Blogs, Newsletters -->
+  
 
 <section id="split-section" style="display: flex; justify-content: space-between; gap: 30px; padding: 60px 20px;">
     <div class="left-content" style="width: 48%; padding: 20px; background-color: #f1f1f1; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
@@ -162,84 +98,72 @@
     </div>
 </section>
 
-  
-  <!-- Hero 4: Testimonials, Clients, Projects -->
-<section id="hero4" class="hero" style="padding: 50px 20px; background-color: #f5f5f5;">
-  <h2 style="text-align: center; font-size: 2.5em; font-weight: bold; color: #333;">What Our Clients Say</h2>
-  <div class="testimonials" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; padding: 20px;">
-      <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
-          <p style="font-size: 1.2em; color: #555;">"Aurbient transformed our business operations with cutting-edge AI solutions. Highly recommended!"</p>
-          <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Amity Foundation</cite>
-      </blockquote>
-      <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
-          <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
-          <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Koyata</cite>
-      </blockquote>
-      <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
-        <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
-        <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Kumkum&Fomices</cite>
-    </blockquote>
-    <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
-      <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
-      <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Tejusty Merte</cite>
-    </blockquote>
-    <blockquote style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); font-style: italic; position: relative;">
-      <p style="font-size: 1.2em; color: #555;">"The team at Aurbient is professional, innovative, and dedicated. We achieved outstanding results."</p>
-      <cite style="position: absolute; bottom: 10px; right: 20px; font-weight: bold; color: #007BFF;">- Owkins</cite>
-    </blockquote>
-  </div>
+<section id="focus-areas">
+  <h2>Our Focus Areas</h2>
+  <p>We empower businesses across industries with AI, automation, and cutting-edge technologies to drive innovation and efficiency.</p>
 
-  <h2 style="text-align: center; font-size: 2.5em; font-weight: bold; color: #333; margin-top: 50px;">Our Clients</h2>
-  <ul class="clients-list" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
-      <li><img src="{% static 'images/client2.png' %}" alt="Client 1" style="max-width: 120px; height: auto;"></li>
-      <li><img src="{% static 'images/client3.png' %}" alt="Client 2" style="max-width: 120px; height: auto;"></li>
-      <li><img src="{% static 'images/client4.png' %}" alt="Client 3" style="max-width: 120px; height: auto;"></li>
-      <li><img src="{% static 'images/client3.png' %}" alt="Client 4" style="max-width: 120px; height: auto;"></li>
-  </ul>
-</section>
+  <div class="focus-grid">
+      <div class="focus-card">
+          <h3>Retail & E-Commerce</h3>
+          <p>Leveraging AI for personalized recommendations, demand forecasting, and supply chain optimization to enhance customer engagement and revenue.</p>
+      </div>
 
-<section id="projects" style="padding: 50px 20px; background-color: #f4f4f4;">
-  <h2 style="text-align: center; font-size: 2.5em; font-weight: bold; color: #333;">Our Projects</h2>
-  
-  <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 20px;">
-    <!-- Project Card 1 -->
-    <div class="project-card" style="background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <h3 style="font-size: 1.8em; color: #474947; margin-bottom: 15px; font-weight: bold;">AI for Smart Retail</h3>
-      <p style="font-size: 1.2em; color: #555;">Implemented an AI-based recommendation engine for a major retail chain, increasing customer engagement and boosting sales by 25%.</p>
-    </div>
+      <div class="focus-card">
+          <h3>Manufacturing & Industrial Automation</h3>
+          <p>Implementing AI-driven predictive maintenance, process automation, and robotics to improve efficiency and reduce operational costs.</p>
+      </div>
 
-    <!-- Project Card 2 -->
-    <div class="project-card" style="background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <h3 style="font-size: 1.8em; color: #474947; margin-bottom: 15px; font-weight: bold;">Smart Manufacturing Automation</h3>
-      <p style="font-size: 1.2em; color: #555;">Developed an end-to-end automation system for a manufacturing company, streamlining processes and improving production efficiency by 40%.</p>
-    </div>
+      <div class="focus-card">
+          <h3>Healthcare & Life Sciences</h3>
+          <p>Developing AI-powered diagnostics, predictive analytics, and patient care solutions to enhance healthcare outcomes and efficiency.</p>
+      </div>
 
-    <!-- Project Card 3 -->
-    <div class="project-card" style="background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <h3 style="font-size: 1.8em; color: #474947; margin-bottom: 15px; font-weight: bold;">IoT-Driven Smart Homes</h3>
-      <p style="font-size: 1.2em; color: #555;">Designed a cutting-edge IoT-based home automation system that allows homeowners to control everything from lighting to security with ease.</p>
-    </div>
+      <div class="focus-card">
+          <h3>Finance & Banking</h3>
+          <p>Enabling financial institutions with AI-driven fraud detection, risk assessment, and automated compliance monitoring for secure operations.</p>
+      </div>
 
-    <!-- Project Card 4 (Real Project 1) -->
-    <div class="project-card" style="background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <h3 style="font-size: 1.8em; color: #474947; margin-bottom: 15px; font-weight: bold;">AI-Driven Healthcare Insights</h3>
-      <p style="font-size: 1.2em; color: #555;">Created an AI model for a healthcare client, enabling real-time predictive analytics to optimize patient care and reduce hospital readmission rates by 15%.</p>
-    </div>
+      <div class="focus-card">
+          <h3>Smart Cities & IoT Solutions</h3>
+          <p>Creating IoT-powered smart infrastructure for energy management, security, and automation to build sustainable and intelligent urban environments.</p>
+      </div>
 
-    <!-- Project Card 5 (Real Project 2) -->
-    <div class="project-card" style="background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <h3 style="font-size: 1.8em; color: #474947; margin-bottom: 15px; font-weight: bold;">Cloud Integration for Financial Services</h3>
-      <p style="font-size: 1.2em; color: #555;">Integrated a secure, cloud-based platform for a financial institution, reducing operational costs by 20% and improving data processing speed.</p>
-    </div>
-
-    <!-- Project Card 6 (Real Project 3) -->
-    <div class="project-card" style="background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <h3 style="font-size: 1.8em; color: #474947; margin-bottom: 15px; font-weight: bold;">Blockchain for Secure Transactions</h3>
-      <p style="font-size: 1.2em; color: #555;">Developed a blockchain-based solution for secure financial transactions, ensuring greater transparency and trust for clients in various sectors.</p>
-    </div>
+      <div class="focus-card">
+          <h3>Enterprise AI & Digital Transformation</h3>
+          <p>Integrating AI-driven automation, cloud solutions, and cybersecurity to enhance productivity and resilience in the digital era.</p>
+      </div>
   </div>
 </section>
 
+<section id="hero4" class="hero">
+  <h2>Why Choose Us?</h2>
+  <div class="reasons">
+      <div class="reason-card">
+          <h3>Expertise in AI & Automation</h3>
+          <p>With years of experience in AI, machine learning, and automation, we develop solutions that enhance efficiency and drive innovation.</p>
+      </div>
+      <div class="reason-card">
+          <h3>Custom-Tailored Solutions</h3>
+          <p>We don’t believe in one-size-fits-all. Our team crafts AI-driven strategies specific to your business goals and industry needs.</p>
+      </div>
+      <div class="reason-card">
+          <h3>Seamless Integration</h3>
+          <p>Our solutions integrate smoothly into your existing systems, ensuring a hassle-free transition and maximum ROI.</p>
+      </div>
+      <div class="reason-card">
+          <h3>Innovation-First Approach</h3>
+          <p>We stay ahead of emerging technologies, ensuring that your business benefits from cutting-edge advancements in AI and digital transformation.</p>
+      </div>
+      <div class="reason-card">
+          <h3>Data-Driven Decision Making</h3>
+          <p>We leverage advanced analytics to help you make informed decisions, optimize processes, and improve customer experiences.</p>
+      </div>
+      <div class="reason-card">
+          <h3>End-to-End Support</h3>
+          <p>From strategy to implementation and ongoing optimization, we are with you at every step of your AI and automation journey.</p>
+      </div>
+  </div>
+</section>
 
   <section id="case-studies" class="hero">
     <h2>Our Success Stories</h2>
@@ -312,5 +236,6 @@
     });
   </script>
   <script src="{% static 'js/scroll.js' %}"></script>
+  <script src="{% static 'js/servicehover.js' %}"></script>
 </body>
 </html>
