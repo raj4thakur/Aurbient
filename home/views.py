@@ -21,5 +21,16 @@ def service_request_view(request):
     return render(request, 'home/service_request.html', {'form': form})
 
 def blogsView(request):
-    print("request in process!")
     return render(request, 'home/blogs.html')
+
+def techView(request):
+    return render(request, 'home/technology.html')
+
+def careerView(request):
+    return render(request, 'home/career.html')
+
+def aboutView(request):
+    return render(request, 'home/about.html')
+
+def contactView(request):
+    return render(request, 'home/contact.html')

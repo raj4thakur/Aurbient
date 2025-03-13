@@ -38,7 +38,7 @@ header .logo {
     letter-spacing: 1px; /* Increased spacing between letters */
     text-transform: uppercase; /* Ensure consistent uppercase style */
     padding-left: 4%;
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-weight:bolder;
     color: white;
 }
@@ -59,10 +59,39 @@ padding: 10px 15px;
 border-radius: 7px;
 transition: background-color 0.3s, transform 0.3s;
 }
-header nav ul li a:hover {
-background-color: #0b3789;
-transform: scale(1.05);
+header nav ul li a {
+    font-size: 1.1em;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+    position: relative; /* Needed for the pseudo-element */
+    overflow: hidden;
+    display: inline-block;
 }
+
+/* Underline Effect */
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: white;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+header nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Slight Scaling Effect */
+header nav ul li a:hover {
+    transform: scale(1.08);
+}
+
 .hero {
 display: flex;
 flex-direction: column;
@@ -125,7 +154,9 @@ overflow: hidden;
 
 .cta-button:hover {
     transform: scale(1.1);
-    background-color: #0b3789;
+    background-color: #00ff22;
+    color:#08145c;
+    transition: transform 0.9s, background-color 4.9s,color 4.2;
 }
 
 /* Right Side: Image */
