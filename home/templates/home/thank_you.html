@@ -1,12 +1,28 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/thanks.css' %}">
+
     <title>Thank You</title>
 </head>
 <body>
-    <h2 style="text-align:center;">Thank You!</h2>
-    <p style="text-align:center;">Your request has been submitted successfully. Our team will contact you soon.</p>
+    <header>
+        <a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
+          <nav>
+            <ul>
+              <li><a href="#hero2">Services</a></li>
+              <li><a href="{% url 'home:technology' %}">Technology</a></li>
+              {% comment %} <li><a href="/blogs">Blog</a></li> {% endcomment %}
+              <li><a href="{% url 'home:career' %}">Career</a></li>
+              <li><a href="">Contact</a></li>
+              <li><a href="{% url 'home:about' %}">About</a></li>
+            </ul>
+          </nav>
+        </header>
+    <h2>Thank You!</h2>
+    <p>Your request has been submitted successfully. Our team will contact you soon.</p>
 </body>
 </html>
