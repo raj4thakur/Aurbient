@@ -10,5 +10,5 @@ path('thank_you/', views.thank_you_view, name='thank_you'),
 path("technology/", views.techView, name='technology'),
 path('career/', views.careerView, name='career'), 
 path('contact/', views.contactView, name='contact'), 
-path('about/', views.aboutView, name='about'), 
+path('/about', views.aboutView, name='about'), 
 ]

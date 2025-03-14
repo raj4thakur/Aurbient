@@ -1,0 +1,76 @@
+/* ================== WHY CHOOSE US SECTION ================== */
+#hero4 {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #08145c 10%, #0d1b80 100%); /* Dark blue gradient */
+    text-align: center;
+    color: white;
+    margin-bottom: 0px;
+}
+
+#hero4 h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* ======= Reasons Grid ======= */
+.reasons {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* ======= Individual Cards ======= */
+.reason-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(23, 20, 199, 0.2);
+    margin-bottom: 0px;
+}
+
+/* Icons */
+.reason-card h3::before {
+    content: "⭐"; /* Default icon */
+    font-size: 1.2em;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* Individual Icons for Each Card */
+.reason-card:nth-child(1) h3::before { content: "🤖"; } /* AI Expertise */
+.reason-card:nth-child(2) h3::before { content: "🎯"; } /* Tailored Solutions */
+.reason-card:nth-child(3) h3::before { content: "🔗"; } /* Integration */
+.reason-card:nth-child(4) h3::before { content: "🚀"; } /* Innovation */
+.reason-card:nth-child(5) h3::before { content: "📊"; } /* Data-Driven */
+.reason-card:nth-child(6) h3::before { content: "✅"; } /* End-to-End Support */
+
+/* Title */
+.reason-card h3 {
+    font-size: 1.6em;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Description */
+.reason-card p {
+    font-size: 1.1em;
+    color: #d1d1d1;
+}
+
+/* Hover Effect */
+.reason-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
