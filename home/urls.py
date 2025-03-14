@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import download_resume
 app_name='home'
 urlpatterns = [
 path('', views.home, name='home'),
@@ -10,5 +11,6 @@ path('thank_you/', views.thank_you_view, name='thank_you'),
 path("technology/", views.techView, name='technology'),
 path('career/', views.careerView, name='career'), 
 path('contact/', views.contactView, name='contact'), 
-path('/about', views.aboutView, name='about'), 
+path("about/", views.aboutView, name="about"),
+path("download_resume/<str:file_id>/", download_resume, name="download_resume"),
 ]

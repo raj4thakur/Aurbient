@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurbient Consulting</title>
+<link rel="stylesheet" href="{% static 'css/career.css' %}">
+<link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+</head>
+    <header>
+    <a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home:home' %}">Services</a></li>
+            <li><a href="{% url 'home:technology' %}">Technology</a></li>
+            <li><a href="{% url 'home:career' %}">Career</a></li>
+            <li><a href="{% url 'home:contact' %}">Contact</a></li>
+            <li><a href="{% url 'home:about' %}">About</a></li>
+        </ul>
+    </nav>
+    </header>
+    <!-- Hero Section -->
+    <section id="career-hero">
+        <img src="{% static 'images/carhero.jpeg' %}" alt="Career Hero Background">
+        <div class="hero-content">
+            <h1>Join Our Team</h1>
+            <p>We’re looking for innovative thinkers ready to make an impact. Explore career opportunities with us.</p>
+            <button id="apply-btn" class="cta-button">Apply Now</button>
+        </div>
+    </section>
+    <!-- Sliding Application Form (Hidden Initially) -->
+    <div id="apply-form-container">
+        <div class="form-content">
+            <h2>Apply for a Job</h2>
+            <form id="apply-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume">
+
+                <label for="message">Cover Letter:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+            <button id="close-btn">✖</button>
+        </div>
+    </div>
+    <!-- Why Work with Us? -->
+    <section id="why-join">
+        <h2>Why Work With Us?</h2>
+        <div class="benefits-container">
+            <div class="benefit">
+                <img src="{% static 'images/growth.jpeg' %}" alt="Growth">
+                <h3>Career Growth</h3>
+                <p>We invest in your future with mentorship, learning programs, and leadership opportunities.</p>
+            </div>
+            <div class="benefit">
+                <img src="{% static 'images/inno.jpeg' %}" alt="Innovation">
+                <h3>Innovative Projects</h3>
+                <p>Work on cutting-edge AI and automation solutions that make a real impact.</p>
+            </div>
+            <div class="benefit">
+                <img src="{% static 'images/wlb.jpeg' %}" alt="Work-Life Balance">
+                <h3>Work-Life Balance</h3>
+                <p>Flexible work arrangements and a supportive team culture help you thrive.</p>
+            </div>
+            <div class="benefit">
+                <img src="{% static 'images/teamculture.jpeg' %}" alt="Culture">
+                <h3>Great Team Culture</h3>
+                <p>Join a collaborative and diverse team where your ideas are valued.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Openings -->
+    <section id="job-listings">
+        <h2>Current Job Openings</h2>
+        <p>We are always looking for passionate and talented individuals to join our team.</p>
+
+        <div class="job">
+            <h3>AI Engineer</h3>
+            <p>Develop AI solutions that enhance automation and business intelligence.</p>
+            <span>📍 Remote | Full-Time</span>
+            <a id="apply-btn" class="apply-button">Apply Now</a>
+        </div>
+
+        <div class="job">
+            <h3>Full Stack Developer</h3>
+            <p>Build robust and scalable web applications for AI-driven products.</p>
+            <span>📍 Bangalore, India | Hybrid</span>
+            <a href="#" class="apply-button">Apply Now</a>
+        </div>
+
+        <div class="job">
+            <h3>Data Scientist</h3>
+            <p>Analyze complex data and develop predictive models to optimize business processes.</p>
+            <span>📍 Remote | Full-Time</span>
+            <a href="#" class="apply-button">Apply Now</a>
+        </div>
+
+        <div class="job">
+            <h3>Product Manager</h3>
+            <p>Drive product innovation and oversee AI-based solution development.</p>
+            <span>📍 Remote | Full-Time</span>
+            <a href="#" class="apply-button">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Life at Aurbient -->
+    <section id="life-at-aurbient">
+        <h2>Life at Aurbient</h2>
+        <p>We believe in fostering creativity, collaboration, and continuous learning. See what it’s like to be part of our team.</p>
+        <div class="gallery">
+            <img src="{% static 'images/Team Collaboration.jpeg' %}" alt="Team Collaboration">
+            <img src="{% static 'images/Office Culture.jpeg' %}" alt="Office Culture">
+            <img src="{% static 'images/Celebrations.jpeg' %}" alt="Celebrations">
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="apply-now">
+        <h2>Ready to Join Us?</h2>
+        <p>We’d love to hear from you! Apply now and be part of something extraordinary.</p>
+        <a href="mailto:careers@aurbient.com" class="cta-button">Send Your Resume</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Aurbient Consulting. All rights reserved.</p>
+        <!--<div class="social-icons">
+            <a href="https://www.linkedin.com/in/raj-thakur-9a4987251/" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+        </div>-->
+    </footer>
+
+<script src="{% static 'js/career.js' %}"></script>
+</body>
+</html>

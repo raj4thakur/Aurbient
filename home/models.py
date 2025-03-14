@@ -36,3 +36,15 @@ class ServiceRequest(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.service_type}"
+
+
+
+class JobApplication(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    job_position = models.CharField(max_length=255)
+    resume_id = models.CharField(max_length=255, blank=True, null=True)  # Stores GridFS file ID
+    applied_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.job_position}"

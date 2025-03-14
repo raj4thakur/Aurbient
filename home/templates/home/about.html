@@ -2,24 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aurbient Consulting</title>
-  <link rel="stylesheet" href="{% static 'css/tech.css' %}">
-  <link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurbient Consulting</title>
+    <link rel="stylesheet" href="{% static 'css/tech.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
 </head>
 <body>
     <header>
-      <a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
+        <a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
         <nav>
-          <ul>
-            <li><a href="#hero2">Services</a></li>
-            <li><a href='technologes'> Technology</a></li>
-            <li><a href="#hero1">Career</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">About</a></li>
-          </ul>
+            <ul>
+            <li><a href="{% url 'home:home' %}">Services</a></li>
+            <li><a href="{% url 'home:technology' %}"> Technology</a></li>
+            <li><a href="{% url 'home:career' %}">Career</a></li>
+            <li><a href="{% url 'home:contact' %}">Contact</a></li>
+            <li><a href="{% url 'home:about' %}">About</a></li>
+            </ul>
         </nav>
     </header>
 <script src="{% static 'js/tech.js' %}"></script>

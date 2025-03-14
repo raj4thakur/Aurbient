@@ -1,0 +1,338 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff0c;
+    color: #08145c;
+    font-size: 16px;
+    }
+    a {
+    text-decoration: none;
+    color: inherit;
+    }
+    ul {
+    list-style: none;
+    }
+    button {
+    cursor: pointer;
+    }
+    header {
+    background-color: #0a0c74;
+    color: white;
+    padding: 0px 50px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header .logo {
+        letter-spacing: 1px; /* Increased spacing between letters */
+        text-transform: uppercase; /* Ensure consistent uppercase style */
+        padding-left: 4%;
+        font-size: 1.2em;
+        font-weight:bolder;
+        color: white;
+    }
+    header nav{
+        margin-right:10%;
+    }
+    header nav ul {
+    display: flex;
+    gap: 30px;
+    }
+    header nav ul li {
+    display: inline;
+    }
+    header nav ul li a {
+    font-size: 1.1em;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+    transition: background-color 0.3s, transform 0.3s;
+    }
+    header nav ul li a {
+        font-size: 1.1em;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 7px;
+        position: relative; /* Needed for the pseudo-element */
+        overflow: hidden;
+        display: inline-block;
+    }
+    
+    /* Underline Effect */
+    header nav ul li a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0%;
+        height: 3px;
+        background-color: white;
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+    
+    /* Hover Effect */
+    header nav ul li a:hover::after {
+        width: 100%;
+        left: 0;
+    }
+    
+    /* Slight Scaling Effect */
+    header nav ul li a:hover {
+        transform: scale(1.08);
+    }
+    /* footer*/
+    footer {
+        background: #0a0a2a; /* Dark Navy Blue */
+        text-align: center;
+        color: white;
+        margin-bottom:0px;
+    }
+    
+    footer p {
+        font-size: 1em;
+        /* margin-bottom: 15px; */
+        color: #bbb;
+    }
+    
+    /* Social Icons */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .social-icons a {
+        color: white;
+        font-size: 1.2em;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .social-icons a:hover {
+        color: #ff6b00; /* Hover Effect */
+        transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    #career-hero {
+        position: relative;
+        width: 100%;
+        height: 60vh; /* Full viewport height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 50px 20px;
+        overflow: hidden;
+    }
+    
+    /* Ensure the image fully covers the section */
+    #career-hero img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the section properly */
+        z-index: -1; /* Sends the image to the background */
+    }
+    
+    /* Overlay for better text readability */
+    #career-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        z-index: 0;
+    }
+    
+    /* Ensures text appears above the overlay */
+    #career-hero .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: auto;
+    }
+    
+
+.hero-content h1 {
+    font-size: 2.5em;
+}
+
+.cta-button {
+    background: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Sliding Form Container */
+#apply-form-container {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially hidden */
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+#form-container {
+    position: fixed;
+    top: 0;
+    right: -400px;  /* Initially hidden */
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+}
+
+#close-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Form Content */
+.form-content {
+    width: 100%;
+    text-align: center;
+}
+
+/* Close Button */
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Input Fields */
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+
+/* Why Work With Us */
+#why-join {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.benefits-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.benefit {
+    width: 250px;
+    text-align: center;
+}
+
+.benefit img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+/* Job Listings */
+#job-listings {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.job {
+    background: #f1f1f1;
+    margin: 20px auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 8px;
+}
+
+.apply-button {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Life at Aurbient */
+#life-at-aurbient {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 8px;
+}
+
+/* Apply Now Section */
+#apply-now {
+    text-align: center;
+    padding: 50px 20px;
+    background: #007BFF;
+    color: white;
+}
+
+
+
+

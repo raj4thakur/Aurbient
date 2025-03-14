@@ -245,7 +245,7 @@ footer {
 
 footer p {
     font-size: 1em;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     color: #bbb;
 }
 
