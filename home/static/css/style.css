@@ -99,7 +99,7 @@ justify-content: center;
 align-items: center;
 text-align: center;
 padding: 80px 20px;
-margin-bottom: 50px;
+margin-bottom: 20px;
 position: relative;
 overflow: hidden;
 }
@@ -194,184 +194,101 @@ overflow: hidden;
     }
 }
 
-
-/* Mission and Vision */
-#mission-vision {
-padding: 50px 20px;
-background-color: #0e1726;
-text-align: center;
-}
-#mission-vision h2 {
-font-size: 3.4em;
-margin-bottom: 30px;
-color: #ffffff;
-}
-#mission-vision p {
-font-size: 1.3em;
-color: #ffffff;
-}
-#industry-expertise {
-background-color: #f9f9f9;
-padding: 60px 20px;
-text-align: center;
-position: relative;
-}
-
-#industry-expertise h2 {
-font-size: 3.5em;
-color: #ae0808;
-margin-bottom: 20px;
-}
-
-#industry-expertise p {
-font-size: 1.4em;
-color: #000000;
-margin-bottom: 40px;
-}
-
-.industry-cards {
-display: flex;
-justify-content: space-around;
-gap: 30px;
-flex-wrap: wrap;
-margin-bottom: 30px;
-}
-
-.industry-card {
-position: relative;
-background-color: #ffffff;
-background-size: cover;
-background-position: center;
-border-radius: 15px;
-padding: 35px 25px;
-text-align: center;
-width: 350px; /* Increased width */
-height: 400px; /* Increased height */
-box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-overflow: hidden;
-}
-
-.industry-card h3 {
-font-size: 1.8em;
-color: #fff; /* White text on dark background */
-margin-bottom: 15px;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.industry-card p {
-color: #000000;
-font-size: 1em;
-opacity: 0;
-transition: opacity 0.3s ease;
-position: absolute;
-bottom: 20px;
-left: 50%;
-transform: translateX(-50%);
-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-}
-
-.industry-card:hover {
-transform: translateY(-8px);
-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.industry-card:hover .industry-description {
-opacity: 1;
-}
-
-.more-industries {
-font-size: 1.1em;
-color: #007bff;
-font-weight: bold;
-cursor: pointer;
-transition: color 0.3s ease;
-margin-top: 40px;
-}
-
-.more-industries:hover {
-color: #0056b3;
-text-decoration: underline;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-.industry-card {
-width: 300px; /* Slightly smaller but still large on tablets */
-}
-}
-
-@media (max-width: 480px) {
-.industry-card {
-width: 270px; /* Make the cards smaller on mobile */
-}
-}
 #contact {
-padding: 60px 20px;
-text-align: center;
+    padding: 0px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Dark Blue to Purple Gradient */
+    color: rgb(18, 11, 111);
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
+
 #contact h2 {
-font-size: 3.4em;
-margin-bottom: 30px;
-color: #07328d;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-#contact p{
-color:#080560
+
+#contact p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: #11115f;
 }
-form {
-display: flex;
-flex-direction: column;
-gap: 20px;
-max-width: 700px;
-margin: 0 auto;
+
+/* CTA BUTTON */
+#contact a button {
+    background: #ff6b00; /* Bright Orange */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
 }
-form input,
-form textarea {
-padding: 15px;
-border: 1px solid #ccc;
-border-radius: 5px;
-font-size: 1.1em;
+
+#contact a button:hover {
+    background: #e65c00; /* Darker orange on hover */
+    transform: scale(1.05);
 }
-form button {
-padding: 15px;
-background-color: #4CAF50;
-color: white;
-border: none;
-font-size: 1.2em;
-font-weight: bold;
-border-radius: 50px;
-transition: background-color 0.3s, transform 0.3s;
-}
-form button:hover {
-background-color: #333;
-transform: scale(1.05);
-}
+
+/* ================== FOOTER ================== */
 footer {
-background-color: #0e1726;
-color: white;
-padding: 20px 0;
-text-align: center;
-font-size: 1.1em;
+    background: #0a0a2a; /* Dark Navy Blue */
+    text-align: center;
+    color: white;
+    margin-bottom:0px;
 }
-footer a {
-color: #4CAF50;
-text-decoration: underline;
+
+footer p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #bbb;
 }
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff6b00; /* Hover Effect */
+    transform: scale(1.1);
+}
+
+/* ================== FLOATING CONTACT BUTTON ================== */
 .cta-float-button {
-position: fixed;
-bottom: 20px;
-right: 20px;
-background-color: #08145c;
-color: white;
-padding: 15px 25px;
-border-radius: 50%;
-font-size: 1.5em;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-transition: transform 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff6b00;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
 }
+
 .cta-float-button:hover {
-transform: scale(1.1);
+    background: #e65c00;
+    transform: scale(1.1);
 }
+
 @media (max-width: 768px) {
 header {
 flex-direction: column;
@@ -452,4 +369,3 @@ width: 100%;
 text-align: center;
 }
 }
-
