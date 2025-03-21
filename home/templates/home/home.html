@@ -4,24 +4,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurbient Consulting</title>
+<title>Aurbient Technologies</title>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">  
 <link rel="stylesheet" href="{% static 'css/services.css' %}">
 <link rel="stylesheet" href="{% static 'css/ourfocus.css' %}">
 <link rel="stylesheet" href="{% static 'css/whychoose.css' %}">
-<link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
+<link rel="stylesheet" href="{% static 'css/request.css' %}">
+
+<link rel="icon" type="image/png" href="{% static 'images/favicol3.png' %}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
 </head>
 <body>
 <header>
-<a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
+<a href="{% url 'home:home' %}" class="logo">
+    <h1>
+        <span class="green">A</span>urb<span class="special-dot">i</span>ent
+    </h1>
+</a>
+
+
     <nav>
     <ul>
         <li><a href="#hero2">Services</a></li>
         <li><a href="{% url 'home:technology' %}">Technology</a></li>
         {% comment %} <li><a href="/blogs">Blog</a></li> {% endcomment %}
         <li><a href="{% url 'home:career' %}">Career</a></li>
-        <li><a href="{% url 'home:contact' %}">Contact</a></li>
+        <li><a href="{% url 'home:blogs' %}">Company Insights</a></li>
         <li><a href="{% url 'home:about' %}">About</a></li>
     </ul>
     </nav>
@@ -33,7 +41,7 @@
             <h1>Welcome to Aurbient Technologies & Consulting</h1>
             <p>We harness the power of AI, automation, and emerging technologies to drive business success.  
                 From strategy to execution, we turn your vision into reality.</p>
-            <a href="{% url 'home:request_service' %}" class="cta-button">Get Started</a>
+                <button class="cta-button open-form-btn">Get Started</button>
         </div>
         <!-- Right Side: Image -->
         <div class="hero1-image">
@@ -78,10 +86,68 @@
             <h3>IT Auditing</h3>
             <p>Ensure compliance, security, and efficiency with a thorough evaluation of your IT systems and processes.</p>
         </div>-->
-
         <button class="scroll-btn right-btn" id="scroll-right">&#9654;</button>
     </div>
 </section>
+
+{% if messages %}
+<div class="message-container">
+    {% for message in messages %}
+    <div class="alert {% if message.tags == 'success' %}success-message{% else %}error-message{% endif %}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Sliding Form Container (Initially Hidden) -->
+<div id="serviceForm" class="form-container">
+    <button id="closeFormBtn" class="close-btn">&times;</button>
+    <h2>Request a Service</h2>
+    <form method="post" action="{% url 'home:request_service' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        <label for="name">Full Name:</label>
+        {{ form.name }}
+    
+        <label for="email">Email:</label>
+        {{ form.email }}
+    
+        <label for="phone">Phone Number:</label>
+        {{ form.phone }}
+    
+        <label for="company">Company Name:</label>
+        {{ form.company }}
+    
+        <label for="service_type">Service Type:</label>
+        {{ form.service_type }}
+    
+        <label for="project_scope">Project Scope:</label>
+        {{ form.project_scope }}
+    
+        <label for="employees_count">Number of Employees:</label>
+        {{ form.employees_count }}
+    
+        <label for="location">Location:</label>
+        {{ form.location }}
+    
+        <label for="additional_info">Additional Information:</label>
+        {{ form.additional_info }}
+    
+        <label for="document">Upload Document:</label>
+        {{ form.document }}
+    
+        <label for="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            I consent to my data being used for service purposes.
+        </label>
+        
+    
+        <button type="submit">Submit Request</button>
+    </form>
+    
+</div>
+
 <section id="split-section" style="display: flex; justify-content: space-between; gap: 30px; padding: 60px 20px;">
     <div class="left-content" style="width: 48%; padding: 20px; background-color: #f1f1f1; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
         <h2>Embrace the Future of Technology</h2>
@@ -91,7 +157,7 @@
     <div class="right-content" style="width: 48%; padding: 20px; background-color: #007BFF; color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
         <h2>Start Your Transformation Journey</h2>
         <p>Ready to take the next step? Let us guide you on a transformative journey to a smarter, more efficient business. Our team of experts will work closely with you to understand your unique needs and tailor a solution that aligns with your vision.</p>
-        <a href="{% url 'home:request_service' %}" class="cta-button" style="padding: 12px 30px; background-color: #fff; color: #007BFF; border: none; border-radius: 4px; cursor: pointer;">Get Started</a>
+        <a class="cta-button" style="padding: 12px 30px; background-color: #fff; color: #007BFF; border: none; border-radius: 4px; cursor: pointer;">Get Started</a>
     </div>
 </section>
 
@@ -172,7 +238,7 @@
 <section id="contact" class="hero" style="padding: 50px 20px;">
 <h2>Ready to Transform Your Business?</h2>
 <p>Contact us today to schedule a consultation with our expert team.</p>
-<a href="{% url 'home:request_service' %}"><button type="submit">request Service</button></a>
+<a ><button class="cta-button open-form-btn" type="submit">request Service</button></a>
 </section>
 <footer>
 <p>&copy; 2025 Aurbient Consulting. All rights reserved.</p>
@@ -182,7 +248,7 @@
     <a href="https://facebook.com" target="_blank">Facebook</a>
 </div>-->
 </footer>
-<a href="{% url 'home:request_service' %}" class="cta-float-button">Contact Us</a>
+<a class="cta-button open-form-btn cta-float-button">Contact Us</a>
 <script>
     const navLinks = document.querySelectorAll('nav a');
 
@@ -209,8 +275,20 @@
         });
     });
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Hide messages after 5 seconds
+        setTimeout(() => {
+            const messages = document.querySelectorAll('.alert');
+            messages.forEach(message => {
+                message.style.display = 'none';
+            });
+        }, 5000);
+    });
+</script>
 
 <script src="{% static 'js/scroll.js' %}"></script>
 <script src="{% static 'js/servicehover.js' %}"></script>
+<script src="{% static 'js/request.js' %}"></script>
 </body>
 </html>

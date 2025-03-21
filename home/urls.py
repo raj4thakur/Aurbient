@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-from .views import download_resume
+from django.conf import settings
+from django.conf.urls.static import static
 app_name='home'
 urlpatterns = [
 path('', views.home, name='home'),
@@ -12,5 +13,8 @@ path("technology/", views.techView, name='technology'),
 path('career/', views.careerView, name='career'), 
 path('contact/', views.contactView, name='contact'), 
 path("about/", views.aboutView, name="about"),
-path("download_resume/<str:file_id>/", download_resume, name="download_resume"),
-]
+path("admin-dashboard/", views.admin_dashboard, name="admin_dashboard"),
+]   
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

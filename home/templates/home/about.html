@@ -5,23 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurbient Consulting</title>
-    <link rel="stylesheet" href="{% static 'css/tech.css' %}">
-    <link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicol3.png' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
 </head>
 <body>
     <header>
-        <a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
+        <a href="{% url 'home:home' %}" class="logo">
+            <h1>
+                <span class="green">A</span>urb<span class="special-dot">i</span>ent
+            </h1>
+        </a>
         <nav>
             <ul>
             <li><a href="{% url 'home:home' %}">Services</a></li>
             <li><a href="{% url 'home:technology' %}"> Technology</a></li>
             <li><a href="{% url 'home:career' %}">Career</a></li>
-            <li><a href="{% url 'home:contact' %}">Contact</a></li>
+            <li><a href="{% url 'home:blogs' %}">Company Insights</a></li>
             <li><a href="{% url 'home:about' %}">About</a></li>
             </ul>
         </nav>
     </header>
-<script src="{% static 'js/tech.js' %}"></script>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Aurbient Consulting</h2>
+                <p>At Aurbient Consulting, we are committed to driving innovation and providing cutting-edge solutions in technology and business consulting. Our expert team helps businesses achieve their goals with tailored strategies, leveraging the latest advancements in AI, cloud computing, and automation.</p>
+                <p>We believe in empowering businesses through collaboration, integrity, and excellence. Partner with us to shape the future of digital transformation.</p>
+                <a href="{% url 'home:contact' %}" class="btn">Get in Touch</a>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'images/abouthero.jpg' %}" alt="Aurbient Consulting Team">
+            </div>
+        </div>
+    </section>
+<script src="{% static 'js/about.js' %}"></script>
 </body>
 </html>

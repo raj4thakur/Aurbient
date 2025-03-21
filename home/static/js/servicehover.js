@@ -7,3 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const formContainer = document.getElementById("serviceForm");
+    const openFormBtn = document.getElementById("openFormBtn");
+    const closeFormBtn = document.getElementById("closeFormBtn");
+
+    openFormBtn.addEventListener("click", function () {
+        formContainer.classList.add("show");
+    });
+
+    closeFormBtn.addEventListener("click", function () {
+        formContainer.classList.remove("show");
+    });
+
+    // Close form when clicking outside of it
+    window.addEventListener("click", function (event) {
+        if (event.target === formContainer) {
+            formContainer.classList.remove("show");
+        }
+    });
+});

@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['aurbient.onrender.com',"127.0.0.1"]
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Application definition
 
@@ -95,7 +96,6 @@ DATABASES = {
         'NAME': 'AurbientFit',  # Replace with your MongoDB database name
         'CLIENT': {
             'host': MONGO_URI,
-            'authSource': 'admin'  # If authentication is required
         }
     }
 }

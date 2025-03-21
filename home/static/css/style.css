@@ -34,14 +34,51 @@ top: 0;
 z-index: 1000;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-header .logo {
-    letter-spacing: 1px; /* Increased spacing between letters */
-    text-transform: uppercase; /* Ensure consistent uppercase style */
+/* header .logo {
+    letter-spacing: 1px; 
+    text-transform: uppercase;
     padding-left: 4%;
     font-size: 1.2em;
     font-weight:bolder;
     color: white;
+} */
+
+.logo h1 {
+    font-family: Arial, sans-serif; /* Use a clean sans-serif font */
+    font-weight: bold;
+    font-size: 42px;
+    color: white; /* Default text color */
+    display: inline-block;
+    margin: 0;
+    margin-left: 80px;
+    text-decoration: none; /* Remove underline from anchor tag */
 }
+
+.green {
+    color: #02bd1b; /* Green color for the letter 'A' */
+}
+
+.special-dot {
+    position: relative;
+    color: white; /* Default color for the letter 'I' */
+}
+
+.special-dot::after {
+    content: '';
+    position: absolute;
+    top: 0.137em; /* Adjust to position the dot */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.22em; /* Size of the dot */
+    height: 0.22em; /* Size of the dot */
+    background-color: #2c3fa7; /* Change to desired color */
+    border-radius: 50%; /* Makes it a perfect circle */
+}
+
+
+
+
+
 header nav{
     margin-right:10%;
 }
@@ -112,6 +149,7 @@ overflow: hidden;
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
+    margin-top: -62px;
 }
 
 .hero1-container {

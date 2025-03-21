@@ -2,25 +2,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aurbient Consulting</title>
-  <link rel="stylesheet" href="{% static 'css/tech.css' %}">
-  <link rel="icon" type="image/png" href="{% static 'images/favicol.png' %}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurbient Consulting</title>
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicol3.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
-  <header>
-    <a href="{% url 'home:home' %}" class="logo"><h1>AURBIENT</h1></a>
-    <nav>
-      <ul>
-          <li><a href="{% url 'home:home' %}">Services</a></li>
-          <li><a href="{% url 'home:technology' %}">Technology</a></li>
-          <li><a href="{% url 'home:career' %}">Career</a></li>
-          <li><a href="{% url 'home:contact' %}">Contact</a></li>          
-          <li><a href="{% url 'home:about' %}">About</a></li>
-      </ul>
-    </nav>
-  </header>
-<script src="{% static 'js/tech.js' %}"></script>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="{% url 'home:home' %}" class="logo">
+            <h1>
+                <span class="green">A</span>urb<span class="special-dot">i</span>ent
+            </h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home:home' %}">Services</a></li>
+                <li><a href="{% url 'home:technology' %}">Technology</a></li>
+                <li><a href="{% url 'home:career' %}">Career</a></li>
+                <li><a href="{% url 'home:blogs' %}" class="active">Company Insights</a></li>
+                <li><a href="{% url 'home:about' %}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="insights-section">
+        <div class="container">
+            <h2>Company Insights</h2>
+            <p class="unavailable-message">🚧 This page is currently not available. Please check back later.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Aurbient Consulting. All Rights Reserved.</p>
+    </footer>
+    <script src="{% static 'js/contact.js' %}"></script>
 </body>
 </html>
