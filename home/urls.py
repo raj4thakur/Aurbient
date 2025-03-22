@@ -14,6 +14,8 @@ path('career/', views.careerView, name='career'),
 path('contact/', views.contactView, name='contact'), 
 path("about/", views.aboutView, name="about"),
 path("admin-dashboard/", views.admin_dashboard, name="admin_dashboard"),
+path("admin/update_status/<int:request_id>/<str:status>/", views.update_status, name="update_status"),
+path("admin/export-data/", views.export_data, name="export_data"),
 ]   
 
 if settings.DEBUG:

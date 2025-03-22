@@ -89,3 +89,28 @@ def admin_dashboard(request):
         "service_requests": service_requests,
         "job_applications": job_applications
     })
+def update_status(request, request_id, status):
+    request_obj = ServiceRequest.objects.get(id=request_id)
+    request_obj.status = status
+    request_obj.save()
+    return JsonResponse({"success": True})
+
+from django.http import HttpResponse
+from .models import ServiceRequest, JobApplication
+
+def export_data(request):
+    response = HttpResponse(content_type="text/csv")
+    response["Content-Disposition"] = 'attachment; filename="admin_data.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(["Type", "Name", "Email", "Service/Job Role", "Submitted At", "Status"])
+
+    service_requests = ServiceRequest.objects.all()
+    for req in service_requests:
+        writer.writerow(["Service Request", req.name, req.email, req.service_type, req.created_at, req.status])
+
+    job_applications = JobApplication.objects.all()
+    for job in job_applications:
+        writer.writerow(["Job Application", job.name, job.email, job.job_role, job.applied_at, "N/A"])
+
+    return response

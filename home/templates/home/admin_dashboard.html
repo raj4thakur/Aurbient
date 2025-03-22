@@ -9,32 +9,18 @@
     <link rel="icon" type="image/png" href="{% static 'images/favicol3.png' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .container {
-            width: 90%;
-            margin: auto;
-            padding: 20px;
-        }
-        h2 {
-            color: #4CAF50;
-        }
-        a.download-link {
-            color: blue;
-            text-decoration: underline;
-        }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        .container { width: 90%; margin: auto; padding: 20px; }
+        h2 { color: #4CAF50; }
+        a.download-link { color: blue; text-decoration: underline; }
+        .status-btn { padding: 5px 10px; cursor: pointer; border: none; }
+        .completed { background-color: green; color: white; }
+        .pending { background-color: orange; color: white; }
+        .reviewed { background-color: blue; color: white; }
+        .follow-up { background-color: red; color: white; }
+        select.filter { padding: 5px; }
     </style>
 </head>
 <body>
@@ -59,6 +45,15 @@
     <div class="container">
         <h2>Admin Dashboard</h2>
 
+        <!-- Filter Options -->
+        <label for="serviceFilter">Filter Service Requests:</label>
+        <select id="serviceFilter" class="filter" onchange="filterRequests()">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+            <option value="reviewed">Reviewed</option>
+        </select>
+
         <h3>📌 Service Requests</h3>
         <table>
             <tr>
@@ -67,19 +62,31 @@
                 <th>Service Type</th>
                 <th>Submitted At</th>
                 <th>Document</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
             {% for request in service_requests %}
-            <tr>
+            <tr class="service-row" data-status="{{ request.status }}">
                 <td>{{ request.name }}</td>
                 <td>{{ request.email }}</td>
                 <td>{{ request.service_type }}</td>
                 <td>{{ request.created_at|date:"d M Y" }}</td>
                 <td>
                     {% if request.document %}
-                        <a class="download-link" href="{{ request.document.url }}" target="_blank">View Document</a>
+                        <a class="download-link" href="{{ request.document.url }}" target="_blank">View</a>
                     {% else %}
                         No Document
                     {% endif %}
+                </td>
+                <td>
+                    <span class="status-btn {% if request.status == 'completed' %}completed{% elif request.status == 'reviewed' %}reviewed{% else %}pending{% endif %}">
+                        {{ request.status|title }}
+                    </span>
+                </td>
+                <td>
+                    <button onclick="updateStatus({{ request.id }}, 'reviewed')">Mark as Reviewed</button>
+                    <button onclick="updateStatus({{ request.id }}, 'completed')">Mark as Completed</button>
+                    <button class="follow-up" onclick="sendFollowUpEmail('{{ request.email }}')">Follow-Up</button>
                 </td>
             </tr>
             {% endfor %}
@@ -93,6 +100,7 @@
                 <th>Job Role</th>
                 <th>Applied At</th>
                 <th>Resume</th>
+                <th>Actions</th>
             </tr>
             {% for applicant in job_applications %}
             <tr>
@@ -102,16 +110,52 @@
                 <td>{{ applicant.applied_at|date:"d M Y" }}</td>
                 <td>
                     {% if applicant.resume %}
-                        <a class="download-link" href="{{ applicant.resume.url }}" target="_blank">Download Resume</a>
+                        <a class="download-link" href="{{ applicant.resume.url }}" target="_blank">Download</a>
                     {% else %}
                         No Resume
                     {% endif %}
                 </td>
+                <td>
+                    <button onclick="updateApplicationStatus({{ applicant.id }}, 'reviewed')">Mark as Reviewed</button>
+                    <button class="follow-up" onclick="sendFollowUpEmail('{{ applicant.email }}')">Follow-Up</button>
+                </td>
             </tr>
             {% endfor %}
         </table>
+
+        <h3>📂 Export Data</h3>
+        <button onclick="window.location.href='{% url 'home:export_data' %}'">Download CSV</button>
     </div>
 
-    <script src="{% static 'js/contact.js' %}"></script>
+    <script>
+        function filterRequests() {
+            var filter = document.getElementById("serviceFilter").value;
+            var rows = document.getElementsByClassName("service-row");
+
+            for (var i = 0; i < rows.length; i++) {
+                if (filter == "all" || rows[i].dataset.status == filter) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+
+        function updateStatus(requestId, status) {
+            fetch(`/admin/update_status/${requestId}/${status}/`, { method: "POST", headers: { "X-CSRFToken": "{{ csrf_token }}" } })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert("Failed to update status");
+                }
+            });
+        }
+
+        function sendFollowUpEmail(email) {
+            alert("Follow-up email sent to " + email);
+        }
+    </script>
 </body>
 </html>
