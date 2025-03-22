@@ -21,21 +21,43 @@ def home(request):
 def thank_you_view(request):
     return render(request, 'home/thank_you.html')
 
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import ServiceRequestForm
+import gridfs
+from bson import ObjectId
+
+# Initialize GridFS
+client = pymongo.MongoClient(settings.MONGO_URI)
+db = client[settings.GRIDFS_DATABASE]
+fs = gridfs.GridFS(db)
 
 def service_request_view(request):
     if request.method == "POST":
         form = ServiceRequestForm(request.POST, request.FILES)
+        
         if form.is_valid():
-            form.save()
+            service_request = form.save(commit=False)
+
+            # Handle file upload to GridFS
+            if "document" in request.FILES:
+                file = request.FILES["document"]
+                file_id = fs.put(file, filename=file.name)
+                service_request.document = str(file_id)  # Store the file ID
+
+            service_request.save()
             messages.success(request, "Your request has been submitted successfully!")
-            return redirect("home:home")  # Redirect on success
+            return redirect("home:home")
+
         else:
-            print("Form Errors:", form.errors)  # Debugging: Print errors in terminal
+            print("Form Errors:", form.errors)
             messages.error(request, "There were errors in your submission. Please correct them.")
+
     else:
         form = ServiceRequestForm()
 
     return render(request, "home/home.html", {"form": form})
+
 
 
 
@@ -57,18 +79,27 @@ def careerView(request):
     form = JobApplicationForm()
 
     if request.method == "POST":
-        form = JobApplicationForm(request.POST, request.FILES)  # Handle file uploads
+        form = JobApplicationForm(request.POST, request.FILES)
 
         if form.is_valid():
-            form.save()  # Saves the form and handles the resume file upload automatically
+            job_application = form.save(commit=False)
+
+            # Handle file upload to GridFS
+            if "resume" in request.FILES:
+                file = request.FILES["resume"]
+                file_id = fs.put(file, filename=file.name)
+                job_application.resume = str(file_id)  # Store the file ID
+
+            job_application.save()
             messages.success(request, "Your application has been submitted successfully!")
-            return redirect("home:career")  # Stay on the same page
+            return redirect("home:career")
 
         else:
             messages.error(request, "There were errors in your submission. Please correct them.")
             print("Job Application Form Errors:", form.errors)
 
     return render(request, "home/career.html", {"form": form})
+
 
 # About Us Page View
 def aboutView(request):
@@ -95,8 +126,18 @@ def update_status(request, request_id, status):
     request_obj.save()
     return JsonResponse({"success": True})
 
-from django.http import HttpResponse
-from .models import ServiceRequest, JobApplication
+from django.http import HttpResponse, Http404
+import gridfs
+
+def serve_gridfs_file(request, file_id):
+    """ Retrieve and serve files from GridFS """
+    try:
+        file = fs.get(ObjectId(file_id))
+        response = HttpResponse(file.read(), content_type="application/octet-stream")
+        response["Content-Disposition"] = f'attachment; filename="{file.filename}"'
+        return response
+    except gridfs.errors.NoFile:
+        raise Http404("File not found")
 
 def export_data(request):
     # response = HttpResponse(content_type="text/csv")
@@ -115,3 +156,5 @@ def export_data(request):
 
     # return response
     return 
+
+

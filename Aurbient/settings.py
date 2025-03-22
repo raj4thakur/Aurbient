@@ -101,6 +101,11 @@ DATABASES = {
 }
 
 
+DEFAULT_FILE_STORAGE = 'djongo.storage.GridFsStorage'
+
+GRIDFS_DATABASE ="AurbientFit"
+GRIDFS_COLLECTION = 'fs'  # Default GridFS collection
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -148,3 +153,25 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'djongo_debug.log',
+        },
+    },
+    'loggers': {
+        'djongo': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
