@@ -407,3 +407,11 @@ width: 100%;
 text-align: center;
 }
 }
+
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 1024px; /* Force desktop width */
+        overflow-x: scroll; /* Enable horizontal scrolling */
+    }
+}

@@ -14,15 +14,16 @@
 <link rel="icon" type="image/png" href="{% static 'images/favicol3.png' %}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
 </head>
-<body>
+<body>  
+    <div id="mobile-warning" style="display: none; text-align: center; padding: 15px; background: red; color: white; font-size: 16px; font-weight: bold;">
+        🚨 For the best experience, please view this website on a larger screen (Laptop or Desktop). 🚨
+    </div> 
 <header>
 <a href="{% url 'home:home' %}" class="logo">
     <h1>
         <span class="green">A</span>urb<span class="special-dot">i</span>ent
     </h1>
 </a>
-
-
     <nav>
     <ul>
         <li><a href="#hero2">Services</a></li>
@@ -290,6 +291,12 @@
 <script src="{% static 'js/scroll.js' %}"></script>
 <script src="{% static 'js/servicehover.js' %}"></script>
 <script src="{% static 'js/request.js' %}"></script>
-<script src="{% static 'js/key.js' %}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth < 2024) { // Adjust this if needed
+        document.getElementById("mobile-warning").style.display = "block";
+    }
+});
+</script>
 </body>
 </html>
