@@ -293,10 +293,21 @@
 <script src="{% static 'js/request.js' %}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    if (window.innerWidth < 2024) { // Adjust this if needed
-        document.getElementById("mobile-warning").style.display = "block";
-    }
-});
+        function checkScreenSize() {
+            if (window.innerWidth < 1024) { // Mobile screens
+                document.getElementById("mobile-warning").style.display = "block";
+            } else {
+                document.getElementById("mobile-warning").style.display = "none";
+            }
+        }
+    
+        // Run check on page load
+        checkScreenSize();
+    
+        // Also run check if the user resizes the window
+        window.addEventListener("resize", checkScreenSize);
+    });
+    
 </script>
 </body>
 </html>

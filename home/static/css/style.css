@@ -327,91 +327,126 @@ footer p {
     transform: scale(1.1);
 }
 
+
+/* Mobile Header & Navigation */
 @media (max-width: 768px) {
-header {
-flex-direction: column;
-padding: 15px;
-}
-header .logo {
-font-size: 1em;
-margin-bottom: 20px;
-}
-nav ul {
-flex-direction: column;
-gap: 15px;
-}
-.services-grid,
-.content-grid,
-.projects-grid {
-grid-template-columns: 1fr;
-}
-.cta-button {
-width: 100%;
-padding: 12px 25px;
-}
-.hero h1 {
-font-size: 3.5em;
-}
-}
-#split-section {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 30px;
-padding: 50px 20px;
-background-color: #f3f7f9; 
-}
-.left-content, .right-content {
-flex: 1;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-background-color: white;
-transition: transform 0.3s, box-shadow 0.3s;
-}
-.left-content:hover, .right-content:hover {
-transform: translateY(-8px);
-box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-.left-content h2, .right-content h2 {
-font-size: 2em;
-color: #2a3d66;
-margin-bottom: 15px;
-}
-.left-content p, .right-content p {
-font-size: 1.1em;
-color: #555; 
-margin-bottom: 20px;
-}
-.left-content .cta-button, .right-content .cta-button {
-background-color: #4CAF50; 
-color: white;
-font-size: 1em;
-font-weight: bold;
-border-radius: 30px;
-padding: 10px 20px;
-border: none;
-transition: transform 0.3s, background-color 0.3s;
-}
-.left-content .cta-button:hover, .right-content .cta-button:hover {
-transform: scale(1.1);
-background-color: #333; 
-}
-@media (max-width: 768px) {
-#split-section {
-flex-direction: column;
-}
-.left-content, .right-content {
-flex: none;
-width: 100%;
-text-align: center;
-}
+    header {
+        flex-direction: column;
+        padding: 15px;
+        height: auto;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #0a0c74;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+    }
 }
 
+/* #SPLIT-SECTION */
+#split-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 20px;
+    background-color: #f3f7f9;
+}
 
+.left-content,
+.right-content {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.left-content:hover,
+.right-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.left-content h2,
+.right-content h2 {
+    font-size: 2em;
+    color: #2a3d66;
+    margin-bottom: 15px;
+}
+
+.left-content p,
+.right-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.left-content .cta-button,
+.right-content .cta-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.left-content .cta-button:hover,
+.right-content .cta-button:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+/* Mobile Layout for #split-section */
+@media (max-width: 768px) {
+    #split-section {
+        flex-direction: column;
+    }
+
+    .left-content,
+    .right-content {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Remove Forced Desktop Width */
 @media screen and (max-width: 768px) {
     body {
-        width: 1024px; /* Force desktop width */
-        overflow-x: scroll; /* Enable horizontal scrolling */
+        width: auto;
+        overflow-x: hidden;
     }
 }
