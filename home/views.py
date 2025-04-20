@@ -111,14 +111,15 @@ def contactView(request):
 
 
 from django.shortcuts import render
-from .models import ServiceRequest, JobApplication
-
+from .models import ServiceRequest, JobApplication,Visit
 def admin_dashboard(request):
     service_requests = ServiceRequest.objects.all()
     job_applications = JobApplication.objects.all()
+    visit_count = Visit.objects.count()
     return render(request, "home/admin_dashboard.html", {
         "service_requests": service_requests,
-        "job_applications": job_applications
+        "job_applications": job_applications,
+        'visit_count': visit_count,
     })
 def update_status(request, request_id, status):
     request_obj = ServiceRequest.objects.get(id=request_id)
