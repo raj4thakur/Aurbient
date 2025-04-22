@@ -242,13 +242,55 @@
 <a ><button class="cta-button open-form-btn" type="submit">request Service</button></a>
 </section>
 <footer>
-<p>&copy; 2025 Aurbient Consulting. All rights reserved.</p>
-<!--<div class="social-icons">
-    <a href="https://www.linkedin.com/in/raj-thakur-9a4987251/" target="_blank">LinkedIn</a>
-    <a href="https://twitter.com" target="_blank">Twitter</a>
-    <a href="https://facebook.com" target="_blank">Facebook</a>
-</div>-->
+    <div class="footer-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 40px 20px; background-color: #1a1a1a; color: white;">
+        
+        <!-- Company Info -->
+        <div class="footer-section" style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+            <h3>Aurbient Technologies</h3>
+            <p>Innovating with AI & emerging technologies to transform businesses worldwide.</p>
+            <p><strong>Address:</strong> 123 Tech Avenue, Innovation Park, CA 90001</p>
+            <p><strong>Email:</strong> <a href="mailto:info@aurbient.com" style="color: #00aced;">rajfreefrombias@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890" style="color: #00aced;">+91 9131248819</a></p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section" style="flex: 1; min-width: 180px; margin-bottom: 20px;">
+            <h4>Quick Links</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="{% url 'home:home' %}" style="color: #ccc;">Home</a></li>
+                <li><a href="{% url 'home:about' %}" style="color: #ccc;">About Us</a></li>
+                <li><a href="#hero2" style="color: #ccc;">Services</a></li>
+                <li><a href="{% url 'home:career' %}" style="color: #ccc;">Careers</a></li>
+                <li><a href="{% url 'home:blogs' %}" style="color: #ccc;">Company Insights</a></li>
+                <li><a href="#contact" style="color: #ccc;">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section" style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4>Connect With Us</h4>
+            <a href="https://www.linkedin.com/in/raj-thakur-9a4987251/" target="_blank" style="color: #ccc; display: block;">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank" style="color: #ccc; display: block;">Twitter</a>
+            <a href="https://facebook.com" target="_blank" style="color: #ccc; display: block;">Facebook</a>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="footer-section" style="flex: 1; min-width: 180px; margin-bottom: 20px;">
+            <h4>Legal</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: #ccc;">Privacy Policy</a></li>
+                <li><a href="#" style="color: #ccc;">Terms of Service</a></li>
+                <li><a href="#" style="color: #ccc;">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div style="background-color: #111; padding: 15px 20px; text-align: center; color: #aaa;">
+        <p>&copy; 2025 Aurbient Technologies & Consulting. All rights reserved.</p>
+    </div>
 </footer>
+
 <a class="cta-button open-form-btn cta-float-button">Contact Us</a>
 <script>
     const navLinks = document.querySelectorAll('nav a');
