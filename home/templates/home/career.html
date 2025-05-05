@@ -43,21 +43,21 @@
         </div>
     {% endif %}
 
-    <!-- Hidden Apply Form -->
     <div id="apply-form-container">
         <button id="close-btn">✖</button> <!-- Close Button -->
 
         <div class="form-content">
             <h2>Apply for a Job</h2>
-            <form id="apply-form" method="POST" action="{% url 'home:career' %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                
-                {{ form.as_p }}  <!-- Django Form Rendering -->
+            <p>Please send your resume and cover letter directly to our HR team.</p>
 
-                <button type="submit" class="submit-btn">Submit Application</button>
-            </form>
+            <a href="mailto:rajthakur.aurbient@gmail.com?subject=Job Application - [Your Position]&body=Hi Aurbient Team,%0D%0A%0D%0AI would like to apply for the [Job Title] role. Please find my resume attached.%0D%0A%0D%0ARegards,%0D%0A[Your Name]"
+            class="submit-btn"
+            style="display: inline-block; margin-top: 10px; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                Send Application Email
+            </a>
         </div>
     </div>
+
 
     
     <!-- Why Work with Us? -->
@@ -87,40 +87,6 @@
         </div>
     </section>
 
-    <!-- Job Openings -->
-    <section id="job-listings">
-        <h2>Current Job Openings</h2>
-        <p>We are always looking for passionate and talented individuals to join our team.</p>
-
-        <div class="job">
-            <h3>AI Engineer</h3>
-            <p>Develop AI solutions that enhance automation and business intelligence.</p>
-            <span>📍 Remote | Full-Time</span>
-            {% comment %} <a id="apply-btn" class="apply-button">Apply Now</a> {% endcomment %}
-        </div>
-
-        <div class="job">
-            <h3>Full Stack Developer</h3>
-            <p>Build robust and scalable web applications for AI-driven products.</p>
-            <span>📍 Bangalore, India | Hybrid</span>
-            {% comment %} <a href="#" class="apply-button">Apply Now</a> {% endcomment %}
-        </div>
-
-        <div class="job">
-            <h3>Data Scientist</h3>
-            <p>Analyze complex data and develop predictive models to optimize business processes.</p>
-            <span>📍 Remote | Full-Time</span>
-            {% comment %} <a href="#" class="apply-button">Apply Now</a> {% endcomment %}
-        </div>
-
-        <div class="job">
-            <h3>Product Manager</h3>
-            <p>Drive product innovation and oversee AI-based solution development.</p>
-            <span>📍 Remote | Full-Time</span>
-            {% comment %} <a href="#" class="apply-button">Apply Now</a> {% endcomment %}
-        </div>
-    </section>
-
     <!-- Life at Aurbient -->
     <section id="life-at-aurbient">
         <h2>Life at Aurbient</h2>
@@ -136,7 +102,7 @@
     <section id="apply-now">
         <h2>Ready to Join Us?</h2>
         <p>We’d love to hear from you! Apply now and be part of something extraordinary.</p>
-        <a href="mailto:careers@aurbient.com" class="cta-button">Send Your Resume</a>
+        <a href="mailto:rajthakur.aurbient@gmail.com" class="cta-button">Send Your Resume</a>
     </section>
 
     <footer>

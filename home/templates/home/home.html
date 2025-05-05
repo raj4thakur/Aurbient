@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{% static 'css/services.css' %}">
 <link rel="stylesheet" href="{% static 'css/ourfocus.css' %}">
 <link rel="stylesheet" href="{% static 'css/whychoose.css' %}">
-<link rel="stylesheet" href="{% static 'css/request.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'css/request.css' %}"> {% endcomment %}
 
 <link rel="icon" type="image/png" href="{% static 'images/favicol3.png' %}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
@@ -24,7 +24,7 @@
         <span class="green">A</span>urb<span class="special-dot">i</span>ent
     </h1>
 </a>
-    <nav>
+    <nav role="navigation", aria-label="main menu">
     <ul>
         <li><a href="#hero2">Services</a></li>
         <li><a href="{% url 'home:technology' %}">Technology</a></li>
@@ -42,7 +42,9 @@
             <h1>Welcome to Aurbient Technologies & Consulting</h1>
             <p>We harness the power of AI, automation, and emerging technologies to drive business success.  
                 From strategy to execution, we turn your vision into reality.</p>
-                <button class="cta-button open-form-btn">Get Started</button>
+                <a href="mailto:rajthakur.aurbient@gmail.com?subject=Request from Website&body=Hi Team Aurbient,%0D%0AI'm interested in your services. Please get in touch with me.%0D%0A%0D%0ARegards,%0D%0A[Your Name]" class="cta-button">
+                    Get Started
+                </a>                
         </div>
         <!-- Right Side: Image -->
         <div class="hero1-image">
@@ -90,7 +92,7 @@
         <button class="scroll-btn right-btn" id="scroll-right">&#9654;</button>
     </div>
 </section>
-
+<!--
 {% if messages %}
 <div class="message-container">
     {% for message in messages %}
@@ -101,7 +103,6 @@
 </div>
 {% endif %}
 
-<!-- Sliding Form Container (Initially Hidden) -->
 <div id="serviceForm" class="form-container">
     <button id="closeFormBtn" class="close-btn">&times;</button>
     <h2>Request a Service</h2>
@@ -142,12 +143,9 @@
             <input type="checkbox" id="consent" name="consent" required>
             I consent to my data being used for service purposes.
         </label>
-        
-    
         <button type="submit">Submit Request</button>
     </form>
-    
-</div>
+</div>-->
 
 <section id="split-section" style="display: flex; justify-content: space-between; gap: 30px; padding: 60px 20px;">
     <div class="left-content" style="width: 48%; padding: 20px; background-color: #f1f1f1; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
@@ -239,21 +237,17 @@
 <section id="contact" class="hero" style="padding: 50px 20px;">
 <h2>Ready to Transform Your Business?</h2>
 <p>Contact us today to schedule a consultation with our expert team.</p>
-<a ><button class="cta-button open-form-btn" type="submit">request Service</button></a>
 </section>
 <footer>
     <div class="footer-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 40px 20px; background-color: #1a1a1a; color: white;">
-        
-        <!-- Company Info -->
         <div class="footer-section" style="flex: 1; min-width: 250px; margin-bottom: 20px;">
             <h3>Aurbient Technologies</h3>
             <p>Innovating with AI & emerging technologies to transform businesses worldwide.</p>
-            <p><strong>Address:</strong> 123 Tech Avenue, Innovation Park, CA 90001</p>
-            <p><strong>Email:</strong> <a href="mailto:info@aurbient.com" style="color: #00aced;">rajfreefrombias@gmail.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+1234567890" style="color: #00aced;">+91 9131248819</a></p>
+            {% comment %} <p><strong>Address:</strong> </p> {% endcomment %}
+            <p><strong>Email:</strong> <a href="mailto:rajthaur.aurbient@gmail.com" style="color: #00aced;">rajfreefrombias@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919131248819" style="color: #00aced;">+91 9131248819</a></p>
         </div>
 
-        <!-- Quick Links -->
         <div class="footer-section" style="flex: 1; min-width: 180px; margin-bottom: 20px;">
             <h4>Quick Links</h4>
             <ul style="list-style: none; padding: 0;">
@@ -266,7 +260,6 @@
             </ul>
         </div>
 
-        <!-- Social Media -->
         <div class="footer-section" style="flex: 1; min-width: 200px; margin-bottom: 20px;">
             <h4>Connect With Us</h4>
             <a href="https://www.linkedin.com/in/raj-thakur-9a4987251/" target="_blank" style="color: #ccc; display: block;">LinkedIn</a>
@@ -274,7 +267,6 @@
             <a href="https://facebook.com" target="_blank" style="color: #ccc; display: block;">Facebook</a>
         </div>
 
-        <!-- Legal Links -->
         <div class="footer-section" style="flex: 1; min-width: 180px; margin-bottom: 20px;">
             <h4>Legal</h4>
             <ul style="list-style: none; padding: 0;">
@@ -284,14 +276,18 @@
             </ul>
         </div>
     </div>
-
-    <!-- Bottom Bar -->
     <div style="background-color: #111; padding: 15px 20px; text-align: center; color: #aaa;">
         <p>&copy; 2025 Aurbient Technologies & Consulting. All rights reserved.</p>
     </div>
 </footer>
 
-<a class="cta-button open-form-btn cta-float-button">Contact Us</a>
+<a 
+    href="mailto:rajthakur.aurbient@gmail.com?subject=Website Contact&body=Hi Aurbient Team,%0D%0AI would like to get in touch regarding your services.%0D%0A%0D%0ARegards,%0D%0A[Your Name]" 
+    class="cta-button cta-float-button"
+    style="text-decoration: none;">
+    Contact Us
+</a>
+
 <script>
     const navLinks = document.querySelectorAll('nav a');
 
@@ -318,7 +314,7 @@
         });
     });
 </script>
-<script>
+{% comment %} <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Hide messages after 5 seconds
         setTimeout(() => {
@@ -328,11 +324,11 @@
             });
         }, 5000);
     });
-</script>
+</script> {% endcomment %}
 
 <script src="{% static 'js/scroll.js' %}"></script>
 <script src="{% static 'js/servicehover.js' %}"></script>
-<script src="{% static 'js/request.js' %}"></script>
+{% comment %} <script src="{% static 'js/request.js' %}"></script> {% endcomment %}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         function checkScreenSize() {
